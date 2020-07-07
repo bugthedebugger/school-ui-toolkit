@@ -6,3 +6,4 @@ export 'package:school_ui_toolkit/src/school_toolkit_card/school_toolkit_card.da
 export 'package:school_ui_toolkit/src/font_size/font_size.dart';
 export 'package:school_ui_toolkit/src/school_toolkit_button/school_toolkit_button.dart';
 export 'package:school_ui_toolkit/src/school_toolkit_text_field/school_toolkit_text_field.dart';
+export 'package:school_ui_toolkit/src/school_toolkit_role_button/school_toolkit_role_button.dart';

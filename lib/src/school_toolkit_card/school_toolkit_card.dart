@@ -31,8 +31,8 @@ class SchoolToolkitCard extends StatelessWidget {
       padding: EdgeInsets.all(
         ScreenUtil().setWidth(15),
       ),
-      width: ScreenUtil().setWidth(width),
-      height: ScreenUtil().setHeight(height),
+      width: width,
+      height: height,
       alignment: alignment,
       decoration: BoxDecoration(
         color: active ? activeColor : backgroundColor,

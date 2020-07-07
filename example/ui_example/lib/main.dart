@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:school_ui_toolkit/school_ui_toolkit.dart';
 import 'package:ui_example/src/assets/assets.dart';
 import 'package:ui_example/src/ui/ui_catalog.dart';
 
@@ -9,6 +10,9 @@ class UIExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'School UI Toolkit',
+      theme: ThemeData(
+        primaryColor: SchoolToolkitColors.blue,
+      ),
       builder: (context, child) {
         ScreenUtil.init(
           width: ScreenSize.width,

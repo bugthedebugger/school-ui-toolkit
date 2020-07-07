@@ -3,6 +3,7 @@ import 'package:ui_example/src/assets/assets.dart';
 import 'package:ui_example/src/ui/grid_card.dart';
 import 'package:ui_example/src/ui/school_location_widget_example.dart';
 import 'package:ui_example/src/ui/school_toolkit_button.dart';
+import 'package:ui_example/src/ui/school_toolkit_role_button_example.dart';
 import 'package:ui_example/src/ui/school_toolkit_text_field_example.dart';
 
 class UICatalog extends StatelessWidget {
@@ -33,6 +34,10 @@ class UICatalog extends StatelessWidget {
           GridCard(
             title: 'School toolkit text field',
             screen: SchoolToolkitTextFieldExample(),
+          ),
+          GridCard(
+            title: 'School toolkit role button',
+            screen: SchoolToolkitRoleButtonExample(),
           ),
         ],
       ),

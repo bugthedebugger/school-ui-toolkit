@@ -13,6 +13,7 @@ dependencies:
 
   flutter_screenutil: ^2.2.0
   cached_network_image: ^2.2.0+1
+  font_awesome_flutter: ^8.8.1
 
 dev_dependencies:
   flutter_test:

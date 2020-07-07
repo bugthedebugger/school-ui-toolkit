@@ -5,4 +5,5 @@ class SchoolToolkitColors {
   static const Color black = Color(0xff4D4E51);
   static const Color light_black = Color(0xff818181);
   static const Color blue = Color(0xff3362CC);
+  static const Color light_blue = Color(0xff3D72DE);
 }

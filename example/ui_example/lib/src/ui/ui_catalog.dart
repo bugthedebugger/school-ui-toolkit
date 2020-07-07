@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ui_example/src/assets/assets.dart';
+import 'package:ui_example/src/ui/grid_card.dart';
 import 'package:ui_example/src/ui/school_location_widget_example.dart';
+import 'package:ui_example/src/ui/school_toolkit_button.dart';
 
 class UICatalog extends StatelessWidget {
   @override
@@ -16,23 +18,16 @@ class UICatalog extends StatelessWidget {
         ),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
+          childAspectRatio: 1.0,
         ),
         children: <Widget>[
-          GestureDetector(
-            onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => SchoolLocationWidgetExample(),
-                ),
-              );
-            },
-            child: Container(
-              alignment: Alignment.center,
-              width: ScreenUtil().setWidth(200),
-              height: ScreenUtil().setHeight(100),
-              color: Colors.black45,
-              child: Text('School location widget'),
-            ),
+          GridCard(
+            title: 'School location widget',
+            screen: SchoolLocationWidgetExample(),
+          ),
+          GridCard(
+            title: 'School toolkit button widget',
+            screen: SchoolToolkitButtonExample(),
           ),
         ],
       ),

@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/screenutil.dart';
 import 'package:school_ui_toolkit/src/colors/school_toolkit_colors.dart';
+import 'package:school_ui_toolkit/src/font_size/font_size.dart';
 import 'package:school_ui_toolkit/src/school_toolkit_card/school_toolkit_card.dart';
 
 class SchoolLocationWidget extends StatelessWidget {
@@ -46,8 +47,8 @@ class SchoolLocationWidget extends StatelessWidget {
               Text(
                 '$name',
                 style: TextStyle(
-                  fontSize: ScreenUtil().setSp(16),
-                  fontWeight: FontWeight.w500,
+                  fontSize: FontSize.fontSize16,
+                  fontWeight: FontSize.medium,
                   color: SchoolToolkitColors.black,
                 ),
               ),
@@ -58,12 +59,12 @@ class SchoolLocationWidget extends StatelessWidget {
                   Icon(
                     Icons.location_on,
                     color: SchoolToolkitColors.blue,
-                    size: ScreenUtil().setSp(18),
+                    size: FontSize.fontSize18,
                   ),
                   Text(
                     '$address',
                     style: TextStyle(
-                      fontSize: ScreenUtil().setSp(14),
+                      fontSize: FontSize.fontSize14,
                       color: SchoolToolkitColors.light_black,
                     ),
                   ),

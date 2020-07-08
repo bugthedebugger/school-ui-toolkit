@@ -9,3 +9,4 @@ export 'package:school_ui_toolkit/src/school_toolkit_text_field/school_toolkit_t
 export 'package:school_ui_toolkit/src/school_toolkit_role_button/school_toolkit_role_button.dart';
 export 'package:school_ui_toolkit/src/overlapping_button_card/overlapping_button_card.dart';
 export 'package:school_ui_toolkit/src/calendar/calendar.dart';
+export 'package:school_ui_toolkit/src/event_card/event_card.dart';

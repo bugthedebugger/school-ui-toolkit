@@ -3,6 +3,8 @@ import 'package:flutter/widgets.dart';
 class SchoolToolkitColors {
   static const Color blue_grey = Color(0xfff0f0f8);
   static const Color light_grey = Color(0xffCDD1D5);
+  static const Color lighter_grey = Color(0xffF1F3F8);
+  static const Color grey = Color(0xff7D85A3);
 
   static const Color black = Color(0xff4D4E51);
   static const Color dark_black = Color(0xff1A1D23);

@@ -6,22 +6,20 @@ class CalendarExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('School location widget'),
+        title: Text('Calendar'),
         centerTitle: true,
       ),
-      body: Center(
-        child: Calendar(
-          startExpanded: true,
-          onDateSelected: (date) {
-            print('Selected date: $date');
-          },
-          onNextMonth: (date) {
-            print('Next month: $date');
-          },
-          onPreviousMonth: (date) {
-            print('Previous month: $date');
-          },
-        ),
+      body: Calendar(
+        startExpanded: true,
+        onDateSelected: (date) {
+          print('Selected date: $date');
+        },
+        onNextMonth: (date) {
+          print('Next month: $date');
+        },
+        onPreviousMonth: (date) {
+          print('Previous month: $date');
+        },
       ),
     );
   }

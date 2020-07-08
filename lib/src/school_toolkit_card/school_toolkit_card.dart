@@ -11,6 +11,7 @@ class SchoolToolkitCard extends StatelessWidget {
   final Alignment alignment;
   final double width;
   final double height;
+  final BoxConstraints constraints;
 
   const SchoolToolkitCard({
     Key key,
@@ -22,11 +23,13 @@ class SchoolToolkitCard extends StatelessWidget {
     this.alignment = Alignment.center,
     this.width,
     this.height,
+    this.constraints,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
+      constraints: constraints,
       duration: animationDuration,
       padding: EdgeInsets.all(
         ScreenUtil().setWidth(15),

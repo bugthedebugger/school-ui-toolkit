@@ -3,6 +3,7 @@ import 'package:ui_example/src/assets/assets.dart';
 import 'package:ui_example/src/ui/calendar_example.dart';
 import 'package:ui_example/src/ui/event_card_example.dart';
 import 'package:ui_example/src/ui/grid_card.dart';
+import 'package:ui_example/src/ui/routine_card_example.dart';
 import 'package:ui_example/src/ui/school_location_widget_example.dart';
 import 'package:ui_example/src/ui/school_toolkit_button.dart';
 import 'package:ui_example/src/ui/school_toolkit_overlapping_card_example.dart';
@@ -53,6 +54,10 @@ class UICatalog extends StatelessWidget {
           GridCard(
             title: 'Event Card',
             screen: EventCardExample(),
+          ),
+          GridCard(
+            title: 'Routine Card',
+            screen: RoutineCardExample(),
           ),
         ],
       ),

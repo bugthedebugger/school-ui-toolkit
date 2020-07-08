@@ -24,7 +24,8 @@ class Calendar extends StatefulWidget {
   _CalendarState createState() => _CalendarState();
 }
 
-class _CalendarState extends State<Calendar> {
+class _CalendarState extends State<Calendar>
+    with SingleTickerProviderStateMixin {
   DateTime _selectedDate = DateTime.now();
   List<DateTime> _weekDayDateTimeList;
   bool _expanded = false;
@@ -168,77 +169,126 @@ class _CalendarState extends State<Calendar> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              AnimatedSwitcher(
-                duration: Duration(milliseconds: 100),
-                child: _expanded
-                    ? Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          IconButton(
-                            onPressed: () {
-                              _previousMonth();
-                              if (widget.onPreviousMonth != null) {
-                                widget.onPreviousMonth(_selectedDate);
-                              }
-                            },
-                            icon: Icon(
-                              FontAwesomeIcons.chevronLeft,
-                              size: FontSize.fontSize20,
-                              color: SchoolToolkitColors.black,
-                            ),
-                          ),
-                          Text(
-                            '${DateFormat('MMMM, yyyy').format(_selectedDate)}',
-                            style: TextStyle(
-                              color: SchoolToolkitColors.dark_black,
-                              fontWeight: FontSize.semiBold,
-                              fontSize: FontSize.fontSize20,
-                            ),
-                          ),
-                          IconButton(
-                            onPressed: () {
-                              _nextMonth();
-                              if (widget.onNextMonth != null) {
-                                widget.onNextMonth(_selectedDate);
-                              }
-                            },
-                            icon: Icon(
-                              FontAwesomeIcons.chevronRight,
-                              size: FontSize.fontSize20,
-                              color: SchoolToolkitColors.black,
-                            ),
-                          ),
-                        ],
-                      )
-                    : Text(
-                        '${DateFormat('MMMM, yyyy').format(_selectedDate)}',
-                        style: TextStyle(
-                          color: SchoolToolkitColors.dark_black,
-                          fontWeight: FontSize.semiBold,
-                          fontSize: FontSize.fontSize20,
-                        ),
-                      ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  IconButton(
+                    onPressed: () {
+                      _previousMonth();
+                      if (widget.onPreviousMonth != null) {
+                        widget.onPreviousMonth(_selectedDate);
+                      }
+                    },
+                    icon: Icon(
+                      FontAwesomeIcons.chevronLeft,
+                      size: FontSize.fontSize20,
+                      color: SchoolToolkitColors.black,
+                    ),
+                  ),
+                  Text(
+                    '${DateFormat('MMMM, yyyy').format(_selectedDate)}',
+                    style: TextStyle(
+                      color: SchoolToolkitColors.dark_black,
+                      fontWeight: FontSize.semiBold,
+                      fontSize: FontSize.fontSize20,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      _nextMonth();
+                      if (widget.onNextMonth != null) {
+                        widget.onNextMonth(_selectedDate);
+                      }
+                    },
+                    icon: Icon(
+                      FontAwesomeIcons.chevronRight,
+                      size: FontSize.fontSize20,
+                      color: SchoolToolkitColors.black,
+                    ),
+                  ),
+                ],
               ),
               SizedBox(
                 height: ScreenUtil().setHeight(22),
               ),
-              AnimatedSwitcher(
-                reverseDuration: Duration(milliseconds: 100),
-                duration: Duration(milliseconds: 300),
-                child: _expanded
-                    ? Container(
-                        child: Table(
+              AnimatedSize(
+                vsync: this,
+                curve: Curves.ease,
+                duration: Duration(milliseconds: 200),
+                child: AnimatedSwitcher(
+                  duration: Duration(milliseconds: 200),
+                  switchInCurve: Curves.easeIn,
+                  switchOutCurve: Curves.easeOut,
+                  child: _expanded
+                      ? Container(
+                          child: Table(
+                            defaultVerticalAlignment:
+                                TableCellVerticalAlignment.middle,
+                            children: [
+                              TableRow(
+                                children: _weekDayDateTimeList.map((day) {
+                                  String dayInital = DateFormat('E')
+                                      .format(day)
+                                      .substring(0, 1);
+                                  return Center(
+                                    child: Text(
+                                      '$dayInital',
+                                      style: TextStyle(
+                                        color: day.weekday ==
+                                                DateTime.now().weekday
+                                            ? SchoolToolkitColors.blue
+                                            : SchoolToolkitColors.light_grey,
+                                        fontWeight: FontSize.semiBold,
+                                        fontSize: FontSize.fontSize20,
+                                      ),
+                                    ),
+                                  );
+                                }).toList(),
+                              ),
+                              for (List<DateTime> dateList
+                                  in _calendarData) ...[
+                                TableRow(
+                                  children: [
+                                    for (int i = 0; i < 7; i++)
+                                      Container(
+                                        height: ScreenUtil().setHeight(5),
+                                      ),
+                                  ],
+                                ),
+                                TableRow(
+                                  children: dateList.map((date) {
+                                    return CalendarDateElement(
+                                      date: date.day,
+                                      today: date.day == DateTime.now().day &&
+                                          date.month == DateTime.now().month,
+                                      fade: date.month != _selectedDate.month,
+                                      selected: date.day == _selectedDate.day &&
+                                          date.month == _selectedDate.month,
+                                      onTap: () {
+                                        _selectDate(date);
+                                        if (widget.onDateSelected != null) {
+                                          widget.onDateSelected(date);
+                                        }
+                                      },
+                                    );
+                                  }).toList(),
+                                ),
+                              ],
+                            ],
+                          ),
+                        )
+                      : Table(
                           defaultVerticalAlignment:
                               TableCellVerticalAlignment.middle,
                           children: [
                             TableRow(
                               children: _weekDayDateTimeList.map((day) {
-                                String dayInital =
+                                String dayInitial =
                                     DateFormat('E').format(day).substring(0, 1);
                                 return Center(
                                   child: Text(
-                                    '$dayInital',
+                                    '$dayInitial',
                                     style: TextStyle(
                                       color:
                                           day.weekday == DateTime.now().weekday
@@ -251,87 +301,35 @@ class _CalendarState extends State<Calendar> {
                                 );
                               }).toList(),
                             ),
-                            for (List<DateTime> dateList in _calendarData) ...[
-                              TableRow(
-                                children: [
-                                  for (int i = 0; i < 7; i++)
-                                    Container(
-                                      height: ScreenUtil().setHeight(5),
-                                    ),
-                                ],
-                              ),
-                              TableRow(
-                                children: dateList.map((date) {
-                                  return CalendarDateElement(
-                                    date: date.day,
-                                    today: date.day == DateTime.now().day &&
-                                        date.month == DateTime.now().month,
-                                    fade: date.month != _selectedDate.month,
-                                    selected: date.day == _selectedDate.day &&
-                                        date.month == _selectedDate.month,
-                                    onTap: () {
-                                      _selectDate(date);
-                                      if (widget.onDateSelected != null) {
-                                        widget.onDateSelected(date);
-                                      }
-                                    },
-                                  );
-                                }).toList(),
-                              ),
-                            ],
+                            TableRow(
+                              children: [
+                                for (int i = 0; i < 7; i++)
+                                  Container(
+                                    height: ScreenUtil().setHeight(5),
+                                  ),
+                              ],
+                            ),
+                            TableRow(
+                              children: _weekDayDateTimeList.map((date) {
+                                return CalendarDateElement(
+                                  date: date.day,
+                                  today: date.day == DateTime.now().day &&
+                                      date.month == DateTime.now().month,
+                                  fade: date.month != _selectedDate.month,
+                                  selected: date.day == _selectedDate.day &&
+                                      date.month == _selectedDate.month,
+                                  onTap: () {
+                                    _selectDate(date);
+                                    if (widget.onDateSelected != null) {
+                                      widget.onDateSelected(date);
+                                    }
+                                  },
+                                );
+                              }).toList(),
+                            ),
                           ],
                         ),
-                      )
-                    : Table(
-                        defaultVerticalAlignment:
-                            TableCellVerticalAlignment.middle,
-                        children: [
-                          TableRow(
-                            children: _weekDayDateTimeList.map((day) {
-                              String dayInitial =
-                                  DateFormat('E').format(day).substring(0, 1);
-                              return Center(
-                                child: Text(
-                                  '$dayInitial',
-                                  style: TextStyle(
-                                    color: day.weekday == DateTime.now().weekday
-                                        ? SchoolToolkitColors.blue
-                                        : SchoolToolkitColors.light_grey,
-                                    fontWeight: FontSize.semiBold,
-                                    fontSize: FontSize.fontSize20,
-                                  ),
-                                ),
-                              );
-                            }).toList(),
-                          ),
-                          TableRow(
-                            children: [
-                              for (int i = 0; i < 7; i++)
-                                Container(
-                                  height: ScreenUtil().setHeight(5),
-                                ),
-                            ],
-                          ),
-                          TableRow(
-                            children: _weekDayDateTimeList.map((date) {
-                              return CalendarDateElement(
-                                date: date.day,
-                                today: date.day == DateTime.now().day &&
-                                    date.month == DateTime.now().month,
-                                fade: date.month != _selectedDate.month,
-                                selected: date.day == _selectedDate.day &&
-                                    date.month == _selectedDate.month,
-                                onTap: () {
-                                  _selectDate(date);
-                                  if (widget.onDateSelected != null) {
-                                    widget.onDateSelected(date);
-                                  }
-                                },
-                              );
-                            }).toList(),
-                          ),
-                        ],
-                      ),
+                ),
               ),
             ],
           ),

@@ -45,13 +45,10 @@ class FeaturedVideoCard extends StatelessWidget {
                 color: SchoolToolkitColors.black,
               ),
             ),
-            IconButton(
-              onPressed: onTap,
-              icon: Icon(
-                FontAwesomeIcons.playCircle,
-                color: Colors.white,
-                size: FontSize.fontSize36,
-              ),
+            Icon(
+              FontAwesomeIcons.playCircle,
+              color: Colors.white,
+              size: FontSize.fontSize36,
             ),
             Positioned(
               bottom: ScreenUtil().setHeight(10),

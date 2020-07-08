@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:school_ui_toolkit/school_ui_toolkit.dart';
+import 'package:ui_example/src/assets/assets.dart';
 
 class AssignmentCardExample extends StatelessWidget {
   @override
@@ -12,8 +13,39 @@ class AssignmentCardExample extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Center(
-          child: SchoolToolkitTextField(
-            hint: 'Custom text field',
+          child: ListView(
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.all(ScreenUtil().setWidth(8.0)),
+                child: AssignmentCard(
+                  deadline: DateTime.now(),
+                  question:
+                      'Chapter 3 - Q.no 1 - Q.no 10 (Please submit in word format with names attached)',
+                  subject: 'Mathematics',
+                  teacher: 'Dr. Stone',
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(ScreenUtil().setWidth(8.0)),
+                child: AssignmentCard(
+                  deadline: DateTime.now(),
+                  question:
+                      'Chapter 3 - Q.no 1 - Q.no 10 (Please submit in word format with names attached)',
+                  subject: 'Mathematics',
+                  teacher: 'Dr. Stone',
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(ScreenUtil().setWidth(8.0)),
+                child: AssignmentCard(
+                  deadline: DateTime.now(),
+                  question:
+                      'Chapter 3 - Q.no 1 - Q.no 10 (Please submit in word format with names attached)',
+                  subject: 'Mathematics',
+                  teacher: 'Dr. Stone',
+                ),
+              ),
+            ],
           ),
         ),
       ),

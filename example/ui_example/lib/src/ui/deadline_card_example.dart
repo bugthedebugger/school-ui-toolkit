@@ -17,37 +17,22 @@ class DeadlineCardExample extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  DeadlineCard(
-                    deadline: DateTime.now(),
-                  ),
-                ],
+              DeadlineCard(
+                deadline: DateTime.now(),
               ),
               SizedBox(
                 height: ScreenUtil().setHeight(5),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  DeadlineCard(
-                    deadline: DateTime.now(),
-                    secondaryColor: SchoolToolkitColors.dark_yellow,
-                  ),
-                ],
+              DeadlineCard(
+                deadline: DateTime.now(),
+                secondaryColor: SchoolToolkitColors.dark_yellow,
               ),
               SizedBox(
                 height: ScreenUtil().setHeight(5),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  DeadlineCard(
-                    deadline: DateTime.now(),
-                    secondaryColor: SchoolToolkitColors.red,
-                  ),
-                ],
+              DeadlineCard(
+                deadline: DateTime.now(),
+                secondaryColor: SchoolToolkitColors.red,
               ),
             ],
           ),

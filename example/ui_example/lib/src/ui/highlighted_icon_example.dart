@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:school_ui_toolkit/school_ui_toolkit.dart';
-import 'package:ui_example/src/assets/assets.dart';
 
 class HighlightedIconExample extends StatelessWidget {
   @override

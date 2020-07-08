@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:school_ui_toolkit/school_ui_toolkit.dart';
 import 'package:ui_example/src/assets/assets.dart';
 
 class GridCard extends StatelessWidget {
@@ -27,7 +28,7 @@ class GridCard extends StatelessWidget {
         alignment: Alignment.center,
         width: ScreenUtil().setWidth(200),
         height: ScreenUtil().setHeight(100),
-        color: Colors.black45,
+        color: SchoolToolkitColors.blue,
         child: Text(
           '$title',
           textAlign: TextAlign.center,

@@ -12,7 +12,9 @@ class SchoolToolkitTextFieldExample extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Center(
-          child: SchoolToolkitTextField(),
+          child: SchoolToolkitTextField(
+            hint: 'Custom text field',
+          ),
         ),
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui_example/src/assets/assets.dart';
+import 'package:ui_example/src/ui/calendar_example.dart';
 import 'package:ui_example/src/ui/grid_card.dart';
 import 'package:ui_example/src/ui/school_location_widget_example.dart';
 import 'package:ui_example/src/ui/school_toolkit_button.dart';
@@ -43,6 +44,10 @@ class UICatalog extends StatelessWidget {
           GridCard(
             title: 'School toolkit overlapping button card',
             screen: SchoolToolkitOverlappingButtonCardExample(),
+          ),
+          GridCard(
+            title: 'Calendar',
+            screen: CalendarExample(),
           ),
         ],
       ),

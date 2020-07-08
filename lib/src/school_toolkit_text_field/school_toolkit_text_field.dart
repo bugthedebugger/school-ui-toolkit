@@ -11,6 +11,7 @@ class SchoolToolkitTextField extends StatefulWidget {
   final VoidCallback onTap;
   final String errorText;
   final String label;
+  final String hint;
 
   const SchoolToolkitTextField({
     Key key,
@@ -22,6 +23,7 @@ class SchoolToolkitTextField extends StatefulWidget {
     this.onTap,
     this.errorText,
     this.label,
+    this.hint,
   }) : super(key: key);
 
   @override
@@ -39,6 +41,7 @@ class _SchoolToolkitTextFieldState extends State<SchoolToolkitTextField> {
       onFieldSubmitted: widget.onFieldSubmitted,
       onTap: widget.onTap,
       decoration: InputDecoration(
+        hintText: widget.hint,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(
             ScreenUtil().setWidth(5.0),

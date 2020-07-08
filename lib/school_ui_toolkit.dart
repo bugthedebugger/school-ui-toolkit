@@ -13,3 +13,4 @@ export 'package:school_ui_toolkit/src/event_card/event_card.dart';
 export 'package:school_ui_toolkit/src/routine_card/routine_card.dart';
 export 'package:school_ui_toolkit/src/deadline_card/deadline_card.dart';
 export 'package:school_ui_toolkit/src/assignment_card/assignment_card.dart';
+export 'package:school_ui_toolkit/src/highlighted_icon/highlighted_icon.dart';

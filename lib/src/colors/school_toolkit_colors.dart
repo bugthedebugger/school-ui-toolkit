@@ -6,6 +6,7 @@ class SchoolToolkitColors {
   static const Color lighter_grey = Color(0xffF1F3F8);
   static const Color grey = Color(0xff7D85A3);
   static const Color medium_grey = Color(0xffA2A7BC);
+  static const Color grey_shadow = Color(0x172E631C);
 
   static const Color black = Color(0xff4D4E51);
   static const Color dark_black = Color(0xff1A1D23);

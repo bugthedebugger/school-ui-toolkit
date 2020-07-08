@@ -10,14 +10,15 @@ class FeaturedVideoCardExample extends StatelessWidget {
         centerTitle: true,
       ),
       body: Center(
-          child: FeaturedVideoCard(
-        title: 'Professor KPR Lecture - Neuroscience Lecture 32',
-        thumbnailURL:
-            'https://www.teachermagazine.com.au/files/ce-image/cache/1c03ffc10fd4ef6a/Cognitive_load_theory_-_teaching_strategies_855_513_60.jpg',
-        onTap: () {
-          print('Handling on tap');
-        },
-      )),
+        child: FeaturedVideoCard(
+          title: 'Professor KPR Lecture - Neuroscience Lecture 32',
+          thumbnailURL:
+              'https://www.teachermagazine.com.au/files/ce-image/cache/1c03ffc10fd4ef6a/Cognitive_load_theory_-_teaching_strategies_855_513_60.jpg',
+          onTap: () {
+            print('Handling on tap');
+          },
+        ),
+      ),
     );
   }
 }

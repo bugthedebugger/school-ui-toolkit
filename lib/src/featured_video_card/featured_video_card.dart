@@ -68,6 +68,17 @@ class FeaturedVideoCard extends StatelessWidget {
                 ),
               ),
             ),
+            Material(
+              color: Colors.transparent,
+              child: InkWell(
+                onTap: onTap,
+                child: Container(
+                  width: ScreenUtil().setWidth(374),
+                  height: ScreenUtil().setHeight(222),
+                  // color: Colors.red,
+                ),
+              ),
+            ),
           ],
         ),
       ),

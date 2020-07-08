@@ -21,7 +21,7 @@ class SchoolToolkitRoleButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SchoolToolkitCard(
       width: ScreenUtil().setWidth(177),
-      height: ScreenUtil().setHeight(115),
+      height: ScreenUtil().setHeight(120),
       active: selected,
       alignment: Alignment.centerLeft,
       child: AnimatedSwitcher(

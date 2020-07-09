@@ -48,8 +48,8 @@ class SchoolLocationWidget extends StatelessWidget {
                 '$name',
                 style: TextStyle(
                   fontSize: FontSize.fontSize16,
-                  fontWeight: FontSize.medium,
-                  color: SchoolToolkitColors.black,
+                  fontWeight: FontSize.bold,
+                  color: SchoolToolkitColors.darkBlack,
                 ),
               ),
               Row(

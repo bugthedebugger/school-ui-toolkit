@@ -12,6 +12,7 @@ class VideoListTileCard extends StatelessWidget {
   final EdgeInsets padding;
   final EdgeInsets margin;
   final Color color;
+  final bool showIcon;
 
   const VideoListTileCard({
     Key key,
@@ -21,6 +22,7 @@ class VideoListTileCard extends StatelessWidget {
     this.padding,
     this.margin,
     this.color = Colors.transparent,
+    this.showIcon = true,
   })  : assert(thumbnailURL != null),
         super(key: key);
 
@@ -67,7 +69,7 @@ class VideoListTileCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Container(
-                    width: ScreenUtil().setWidth(300),
+                    width: ScreenUtil().setWidth(260),
                     child: Text(
                       '${title ?? 'Untitled Video'}',
                       style: TextStyle(
@@ -81,20 +83,22 @@ class VideoListTileCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      Icon(
-                        FontAwesomeIcons.userGraduate,
-                        size: FontSize.fontSize16,
-                        color: SchoolToolkitColors.medium_grey,
-                      ),
-                      SizedBox(
-                        width: ScreenUtil().setWidth(10),
-                      ),
+                      if (showIcon) ...[
+                        Icon(
+                          FontAwesomeIcons.userGraduate,
+                          size: FontSize.fontSize16,
+                          color: SchoolToolkitColors.grey,
+                        ),
+                        SizedBox(
+                          width: ScreenUtil().setWidth(10),
+                        ),
+                      ],
                       Container(
-                        width: ScreenUtil().setWidth(274),
+                        width: ScreenUtil().setWidth(234),
                         child: Text(
                           '${author ?? 'Unknown Author'}',
                           style: TextStyle(
-                            color: SchoolToolkitColors.medium_grey,
+                            color: SchoolToolkitColors.grey,
                             fontSize: FontSize.fontSize14,
                             fontWeight: FontSize.regular,
                           ),

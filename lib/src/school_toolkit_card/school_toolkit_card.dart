@@ -11,6 +11,8 @@ class SchoolToolkitCard extends StatelessWidget {
   final Alignment alignment;
   final double width;
   final double height;
+  final bool showShadow;
+  final EdgeInsets margin;
 
   const SchoolToolkitCard({
     Key key,
@@ -22,6 +24,8 @@ class SchoolToolkitCard extends StatelessWidget {
     this.alignment = Alignment.center,
     this.width,
     this.height,
+    this.showShadow = false,
+    this.margin,
   }) : super(key: key);
 
   @override
@@ -31,6 +35,7 @@ class SchoolToolkitCard extends StatelessWidget {
       padding: EdgeInsets.all(
         ScreenUtil().setWidth(15),
       ),
+      margin: margin,
       curve: Curves.ease,
       width: width,
       height: height,
@@ -40,6 +45,19 @@ class SchoolToolkitCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(
           ScreenUtil().setWidth(10),
         ),
+        boxShadow: showShadow
+            ? [
+                BoxShadow(
+                  blurRadius: ScreenUtil().setHeight(15),
+                  color: SchoolToolkitColors.black_shadow,
+                  offset: Offset(
+                    0,
+                    ScreenUtil().setHeight(15),
+                  ),
+                  spreadRadius: ScreenUtil().setHeight(13),
+                ),
+              ]
+            : [],
       ),
       child: child,
     );

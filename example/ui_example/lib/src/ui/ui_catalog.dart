@@ -7,6 +7,7 @@ import 'package:ui_example/src/ui/event_card_example.dart';
 import 'package:ui_example/src/ui/featured_video_card_example.dart';
 import 'package:ui_example/src/ui/grid_card.dart';
 import 'package:ui_example/src/ui/highlighted_icon_example.dart';
+import 'package:ui_example/src/ui/profile_card_example.dart';
 import 'package:ui_example/src/ui/routine_card_example.dart';
 import 'package:ui_example/src/ui/school_location_widget_example.dart';
 import 'package:ui_example/src/ui/school_toolkit_button.dart';
@@ -83,6 +84,10 @@ class UICatalog extends StatelessWidget {
           GridCard(
             title: 'Video List Tile Card',
             screen: VideoListtileCardExample(),
+          ),
+          GridCard(
+            title: 'Profile Card',
+            screen: ProfileCardExample(),
           ),
         ],
       ),

@@ -30,6 +30,7 @@ class OverlappingButtonCard extends StatelessWidget {
         Container(
           width: width,
           height: height,
+          padding: padding,
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(

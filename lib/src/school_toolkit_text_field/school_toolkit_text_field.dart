@@ -44,7 +44,7 @@ class _SchoolToolkitTextFieldState extends State<SchoolToolkitTextField> {
       decoration: InputDecoration(
         hintStyle: TextStyle(
           fontSize: FontSize.fontSize18,
-          color: SchoolToolkitColors.blueGrey,
+          color: SchoolToolkitColors.mediumGrey,
         ),
         hintText: widget.hint,
         border: OutlineInputBorder(

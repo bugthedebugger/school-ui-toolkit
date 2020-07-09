@@ -7,7 +7,7 @@ class AssignmentCardExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('School toolkit text field'),
+        title: Text('Assignment card'),
         centerTitle: true,
       ),
       body: Padding(

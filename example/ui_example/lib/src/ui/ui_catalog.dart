@@ -13,6 +13,7 @@ import 'package:ui_example/src/ui/school_toolkit_button.dart';
 import 'package:ui_example/src/ui/school_toolkit_overlapping_card_example.dart';
 import 'package:ui_example/src/ui/school_toolkit_role_button_example.dart';
 import 'package:ui_example/src/ui/school_toolkit_text_field_example.dart';
+import 'package:ui_example/src/ui/video_list_tile_card_example.dart';
 
 class UICatalog extends StatelessWidget {
   @override
@@ -78,6 +79,10 @@ class UICatalog extends StatelessWidget {
           GridCard(
             title: 'Featured Video Card',
             screen: FeaturedVideoCardExample(),
+          ),
+          GridCard(
+            title: 'Video List Tile Card',
+            screen: VideoListtileCardExample(),
           ),
         ],
       ),

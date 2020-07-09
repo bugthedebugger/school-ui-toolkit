@@ -1,8 +1,8 @@
 name: school_ui_toolkit
-description: A new Flutter package project.
-version: 0.0.1
-author:
-homepage:
+description: A school UI toolkit.
+version: 1.0.0
+author: Wasp Labs.
+homepage: https://wasp-labs.com/
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

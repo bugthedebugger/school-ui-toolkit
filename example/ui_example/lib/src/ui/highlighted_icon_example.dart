@@ -10,8 +10,17 @@ class HighlightedIconExample extends StatelessWidget {
         centerTitle: true,
       ),
       body: Center(
-        child: HighlightedIcon(
-          icon: Icons.class_,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            HighlightedIcon(
+              icon: Icons.class_,
+              busy: true,
+            ),
+            HighlightedIcon(
+              icon: Icons.class_,
+            ),
+          ],
         ),
       ),
     );

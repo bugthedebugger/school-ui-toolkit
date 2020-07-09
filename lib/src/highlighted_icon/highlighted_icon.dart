@@ -5,10 +5,12 @@ import 'package:school_ui_toolkit/src/font_size/font_size.dart';
 
 class HighlightedIcon extends StatelessWidget {
   final IconData icon;
+  final bool busy;
 
   const HighlightedIcon({
     Key key,
     @required this.icon,
+    this.busy = false,
   })  : assert(icon != null),
         super(key: key);
 
@@ -46,11 +48,25 @@ class HighlightedIcon extends StatelessWidget {
               ),
             ],
           ),
-          child: Icon(
-            icon,
-            color: SchoolToolkitColors.blue,
-            size: FontSize.fontSize30,
-          ),
+          child: busy
+              ? Center(
+                  child: Theme(
+                    data: ThemeData(
+                      primaryColor: SchoolToolkitColors.blue,
+                      accentColor: SchoolToolkitColors.blue,
+                    ),
+                    child: Container(
+                      height: ScreenUtil().setWidth(32),
+                      width: ScreenUtil().setWidth(32),
+                      child: CircularProgressIndicator(),
+                    ),
+                  ),
+                )
+              : Icon(
+                  icon,
+                  color: SchoolToolkitColors.blue,
+                  size: FontSize.fontSize30,
+                ),
         ),
       ],
     );

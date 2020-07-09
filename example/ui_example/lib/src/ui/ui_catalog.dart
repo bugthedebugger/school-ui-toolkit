@@ -43,6 +43,10 @@ class UICatalog extends StatelessWidget {
             screen: SchoolToolkitButtonExample(),
           ),
           GridCard(
+            title: 'Outlined Button',
+            screen: OutlinedButtonExample(),
+          ),
+          GridCard(
             title: 'School toolkit text field',
             screen: SchoolToolkitTextFieldExample(),
           ),
@@ -89,10 +93,6 @@ class UICatalog extends StatelessWidget {
           GridCard(
             title: 'Profile Card',
             screen: ProfileCardExample(),
-          ),
-          GridCard(
-            title: 'Outlined Button',
-            screen: OutlinedButtonExample(),
           ),
         ],
       ),

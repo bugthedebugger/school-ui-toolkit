@@ -156,7 +156,7 @@ class _CalendarState extends State<Calendar>
             boxShadow: [
               BoxShadow(
                 blurRadius: ScreenUtil().setHeight(15),
-                color: SchoolToolkitColors.black_shadow,
+                color: SchoolToolkitColors.blackShadow,
                 offset: Offset(
                   0,
                   ScreenUtil().setHeight(15),
@@ -189,7 +189,7 @@ class _CalendarState extends State<Calendar>
                   Text(
                     '${DateFormat('MMMM, yyyy').format(_selectedDate)}',
                     style: TextStyle(
-                      color: SchoolToolkitColors.dark_black,
+                      color: SchoolToolkitColors.darkBlack,
                       fontWeight: FontSize.semiBold,
                       fontSize: FontSize.fontSize20,
                     ),
@@ -238,7 +238,7 @@ class _CalendarState extends State<Calendar>
                                         color: day.weekday ==
                                                 DateTime.now().weekday
                                             ? SchoolToolkitColors.blue
-                                            : SchoolToolkitColors.light_grey,
+                                            : SchoolToolkitColors.lightGrey,
                                         fontWeight: FontSize.semiBold,
                                         fontSize: FontSize.fontSize20,
                                       ),
@@ -293,7 +293,7 @@ class _CalendarState extends State<Calendar>
                                       color:
                                           day.weekday == DateTime.now().weekday
                                               ? SchoolToolkitColors.blue
-                                              : SchoolToolkitColors.light_grey,
+                                              : SchoolToolkitColors.lightGrey,
                                       fontWeight: FontSize.semiBold,
                                       fontSize: FontSize.fontSize20,
                                     ),
@@ -344,7 +344,7 @@ class _CalendarState extends State<Calendar>
             child: Container(
               width: ScreenUtil().setWidth(66),
               height: ScreenUtil().setHeight(30),
-              color: SchoolToolkitColors.lighter_blue,
+              color: SchoolToolkitColors.lighterBlue,
               child: Icon(
                 _expanded
                     ? FontAwesomeIcons.chevronUp

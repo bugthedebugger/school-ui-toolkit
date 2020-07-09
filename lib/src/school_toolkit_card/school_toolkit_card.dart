@@ -17,7 +17,7 @@ class SchoolToolkitCard extends StatelessWidget {
   const SchoolToolkitCard({
     Key key,
     this.child,
-    this.backgroundColor = SchoolToolkitColors.blue_grey,
+    this.backgroundColor = SchoolToolkitColors.blueGrey,
     this.activeColor = SchoolToolkitColors.blue,
     this.active = false,
     this.animationDuration = const Duration(milliseconds: 300),
@@ -49,7 +49,7 @@ class SchoolToolkitCard extends StatelessWidget {
             ? [
                 BoxShadow(
                   blurRadius: ScreenUtil().setHeight(15),
-                  color: SchoolToolkitColors.black_shadow,
+                  color: SchoolToolkitColors.blackShadow,
                   offset: Offset(
                     0,
                     ScreenUtil().setHeight(15),

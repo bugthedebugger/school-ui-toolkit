@@ -24,7 +24,7 @@ class SchoolToolkitButton extends StatelessWidget {
           ScreenUtil().setWidth(5.0),
         ),
       ),
-      disabledColor: SchoolToolkitColors.light_black,
+      disabledColor: SchoolToolkitColors.lightBlack,
       color: SchoolToolkitColors.blue,
       child: Padding(
         padding: EdgeInsets.symmetric(

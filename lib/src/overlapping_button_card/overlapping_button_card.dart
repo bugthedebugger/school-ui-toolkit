@@ -38,7 +38,7 @@ class OverlappingButtonCard extends StatelessWidget {
               boxShadow: [
                 BoxShadow(
                   blurRadius: ScreenUtil().setWidth(34),
-                  color: SchoolToolkitColors.black_shadow,
+                  color: SchoolToolkitColors.blackShadow,
                   offset: Offset(
                     0,
                     ScreenUtil().setHeight(1),
@@ -51,7 +51,7 @@ class OverlappingButtonCard extends StatelessWidget {
           top: (height ?? 0) - ScreenUtil().setHeight(30),
           child: FlatButton(
             onPressed: onPressed,
-            disabledColor: SchoolToolkitColors.light_black,
+            disabledColor: SchoolToolkitColors.lightBlack,
             disabledTextColor: Colors.white54,
             textColor: SchoolToolkitColors.black,
             shape: RoundedRectangleBorder(

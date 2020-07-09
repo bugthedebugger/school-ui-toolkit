@@ -73,7 +73,7 @@ class VideoListTileCard extends StatelessWidget {
                     child: Text(
                       '${title ?? 'Untitled Video'}',
                       style: TextStyle(
-                        color: SchoolToolkitColors.dark_black,
+                        color: SchoolToolkitColors.darkBlack,
                         fontSize: FontSize.fontSize16,
                         fontWeight: FontSize.bold,
                       ),

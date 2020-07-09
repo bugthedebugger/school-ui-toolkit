@@ -35,7 +35,7 @@ class AssignmentCard extends StatelessWidget {
         minHeight: ScreenUtil().setHeight(140),
       ),
       decoration: BoxDecoration(
-        color: SchoolToolkitColors.blue_grey,
+        color: SchoolToolkitColors.blueGrey,
         borderRadius: BorderRadius.circular(
           ScreenUtil().setWidth(10),
         ),
@@ -50,7 +50,7 @@ class AssignmentCard extends StatelessWidget {
             children: <Widget>[
               Icon(
                 FontAwesomeIcons.questionCircle,
-                color: SchoolToolkitColors.medium_grey,
+                color: SchoolToolkitColors.mediumGrey,
                 size: FontSize.fontSize16,
               ),
               SizedBox(
@@ -61,7 +61,7 @@ class AssignmentCard extends StatelessWidget {
                 child: Text(
                   '$question',
                   style: TextStyle(
-                    color: SchoolToolkitColors.dark_black,
+                    color: SchoolToolkitColors.darkBlack,
                     fontSize: FontSize.fontSize16,
                     fontWeight: FontSize.semiBold,
                   ),
@@ -78,7 +78,7 @@ class AssignmentCard extends StatelessWidget {
             children: <Widget>[
               Icon(
                 FontAwesomeIcons.book,
-                color: SchoolToolkitColors.medium_grey,
+                color: SchoolToolkitColors.mediumGrey,
                 size: FontSize.fontSize16,
               ),
               SizedBox(
@@ -87,7 +87,7 @@ class AssignmentCard extends StatelessWidget {
               Text(
                 '$subject',
                 style: TextStyle(
-                  color: SchoolToolkitColors.medium_grey,
+                  color: SchoolToolkitColors.mediumGrey,
                   fontSize: FontSize.fontSize14,
                   fontWeight: FontSize.medium,
                 ),
@@ -103,7 +103,7 @@ class AssignmentCard extends StatelessWidget {
             children: <Widget>[
               Icon(
                 FontAwesomeIcons.userGraduate,
-                color: SchoolToolkitColors.medium_grey,
+                color: SchoolToolkitColors.mediumGrey,
                 size: FontSize.fontSize16,
               ),
               SizedBox(
@@ -112,7 +112,7 @@ class AssignmentCard extends StatelessWidget {
               Text(
                 '$teacher',
                 style: TextStyle(
-                  color: SchoolToolkitColors.medium_grey,
+                  color: SchoolToolkitColors.mediumGrey,
                   fontSize: FontSize.fontSize14,
                   fontWeight: FontSize.medium,
                 ),

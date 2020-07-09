@@ -45,7 +45,7 @@ class ProfileCard extends StatelessWidget {
             height: ScreenUtil().setHeight(15),
           ),
           SchoolToolkitCard(
-            backgroundColor: SchoolToolkitColors.blue_grey,
+            backgroundColor: SchoolToolkitColors.blueGrey,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[

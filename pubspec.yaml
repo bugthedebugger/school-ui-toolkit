@@ -1,8 +1,8 @@
 name: school_ui_toolkit
-description: A new Flutter package project.
-version: 0.0.1
-author:
-homepage:
+description: A school UI toolkit.
+version: 1.0.0
+author: Wasp Labs.
+homepage: https://wasp-labs.com/
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -10,6 +10,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  flutter_screenutil: ^2.2.0
+  cached_network_image: ^2.2.0+1
+  font_awesome_flutter: ^8.8.1
+  intl: ^0.16.1
 
 dev_dependencies:
   flutter_test:
@@ -20,7 +25,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
   # To add assets to your package, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
@@ -31,7 +35,6 @@ flutter:
   #
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
-
   # To add custom fonts to your package, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a

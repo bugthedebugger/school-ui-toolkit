@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui_example/src/assets/assets.dart';
 import 'package:ui_example/src/ui/assignment_card_example.dart';
+import 'package:ui_example/src/ui/bus_route_widget_example.dart';
 import 'package:ui_example/src/ui/calendar_example.dart';
 import 'package:ui_example/src/ui/deadline_card_example.dart';
 import 'package:ui_example/src/ui/event_card_example.dart';
@@ -93,6 +94,10 @@ class UICatalog extends StatelessWidget {
           GridCard(
             title: 'Profile Card',
             screen: ProfileCardExample(),
+          ),
+          GridCard(
+            title: 'Bus Route Widget',
+            screen: BusRouteWidgetExample(),
           ),
         ],
       ),

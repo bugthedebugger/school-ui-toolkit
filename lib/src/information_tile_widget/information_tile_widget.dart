@@ -10,6 +10,10 @@ class InformationTileWidget extends StatelessWidget {
   final EdgeInsets margin;
   final Color color;
   final IconData icon;
+  final bool biggerTitle;
+  final bool rounded;
+  final Color iconColor;
+  final Color iconBackgroundColor;
 
   const InformationTileWidget({
     Key key,
@@ -19,6 +23,10 @@ class InformationTileWidget extends StatelessWidget {
     this.margin,
     this.color = Colors.transparent,
     @required this.icon,
+    this.biggerTitle = false,
+    this.rounded = true,
+    this.iconColor = SchoolToolkitColors.grey,
+    this.iconBackgroundColor = Colors.white,
   })  : assert(icon != null),
         super(key: key);
 
@@ -46,12 +54,17 @@ class InformationTileWidget extends StatelessWidget {
                 height: ScreenUtil().setWidth(42),
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.white,
+                  shape: rounded ? BoxShape.circle : BoxShape.rectangle,
+                  color: iconBackgroundColor,
+                  borderRadius: !rounded
+                      ? BorderRadius.circular(
+                          ScreenUtil().setWidth(5),
+                        )
+                      : null,
                 ),
                 child: Icon(
                   icon,
-                  color: SchoolToolkitColors.grey,
+                  color: iconColor,
                   size: FontSize.fontSize20,
                 ),
               ),
@@ -65,11 +78,16 @@ class InformationTileWidget extends StatelessWidget {
                   Container(
                     width: ScreenUtil().setWidth(250),
                     child: Text(
-                      '${title ?? 'Unknown'}',
+                      '${title ?? 'Untitled'}',
                       style: TextStyle(
-                        color: SchoolToolkitColors.grey,
-                        fontSize: FontSize.fontSize14,
-                        fontWeight: FontSize.regular,
+                        color: biggerTitle
+                            ? SchoolToolkitColors.dark_black
+                            : SchoolToolkitColors.grey,
+                        fontSize: biggerTitle
+                            ? FontSize.fontSize16
+                            : FontSize.fontSize14,
+                        fontWeight:
+                            biggerTitle ? FontSize.bold : FontSize.regular,
                       ),
                     ),
                   ),
@@ -78,9 +96,14 @@ class InformationTileWidget extends StatelessWidget {
                     child: Text(
                       '${subTitle ?? 'Untitled'}',
                       style: TextStyle(
-                        color: SchoolToolkitColors.dark_black,
-                        fontSize: FontSize.fontSize16,
-                        fontWeight: FontSize.bold,
+                        color: !biggerTitle
+                            ? SchoolToolkitColors.dark_black
+                            : SchoolToolkitColors.grey,
+                        fontSize: !biggerTitle
+                            ? FontSize.fontSize16
+                            : FontSize.fontSize14,
+                        fontWeight:
+                            !biggerTitle ? FontSize.bold : FontSize.regular,
                       ),
                     ),
                   ),

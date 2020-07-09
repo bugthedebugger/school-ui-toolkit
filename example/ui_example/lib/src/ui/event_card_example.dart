@@ -25,7 +25,7 @@ class EventCardExample extends StatelessWidget {
               event: 'Sports week Class 3 - Class 10',
               time: '1:00 - 3:00 PM',
               primaryColor: SchoolToolkitColors.green,
-              secondaryColor: SchoolToolkitColors.light_green,
+              secondaryColor: SchoolToolkitColors.lightGreen,
             ),
             SizedBox(
               height: ScreenUtil().setHeight(10),
@@ -33,7 +33,7 @@ class EventCardExample extends StatelessWidget {
             EventCard(
               event: 'Sports week Class 3 - Class 10',
               time: '1:00 - 3:00 PM',
-              secondaryColor: SchoolToolkitColors.lighter_grey,
+              secondaryColor: SchoolToolkitColors.lighterGrey,
               primaryColor: SchoolToolkitColors.grey,
             ),
           ],

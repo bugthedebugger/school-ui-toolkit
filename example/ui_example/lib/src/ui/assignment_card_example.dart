@@ -33,7 +33,7 @@ class AssignmentCardExample extends StatelessWidget {
                       'Chapter 3 - Q.no 1 - Q.no 10 (Please submit in word format with names attached)',
                   subject: 'Mathematics',
                   teacher: 'Dr. Stone',
-                  deadlineBackgroundColor: SchoolToolkitColors.dark_yellow,
+                  deadlineBackgroundColor: SchoolToolkitColors.darkYellow,
                 ),
               ),
               Padding(

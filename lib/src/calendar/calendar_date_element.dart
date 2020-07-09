@@ -31,7 +31,7 @@ class CalendarDateElement extends StatelessWidget {
           height: ScreenUtil().setWidth(40),
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: SchoolToolkitColors.lighter_blue,
+            color: SchoolToolkitColors.lighterBlue,
             border: Border.all(
               color: SchoolToolkitColors.blue,
               width: ScreenUtil().setWidth(2.0),
@@ -83,8 +83,8 @@ class CalendarDateElement extends StatelessWidget {
             '$date',
             style: TextStyle(
               color: fade
-                  ? SchoolToolkitColors.light_grey
-                  : SchoolToolkitColors.dark_black,
+                  ? SchoolToolkitColors.lightGrey
+                  : SchoolToolkitColors.darkBlack,
               fontSize: FontSize.fontSize16,
               fontWeight: FontSize.semiBold,
             ),

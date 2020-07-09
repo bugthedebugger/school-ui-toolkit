@@ -23,7 +23,7 @@ class OutlinedButton extends StatelessWidget {
         side: BorderSide(
           color: onPressed != null
               ? SchoolToolkitColors.blue
-              : SchoolToolkitColors.light_grey,
+              : SchoolToolkitColors.lightGrey,
           width: ScreenUtil().setWidth(1.5),
         ),
         borderRadius: BorderRadius.circular(

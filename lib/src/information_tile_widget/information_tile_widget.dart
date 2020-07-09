@@ -81,7 +81,7 @@ class InformationTileWidget extends StatelessWidget {
                       '${title ?? 'Untitled'}',
                       style: TextStyle(
                         color: biggerTitle
-                            ? SchoolToolkitColors.dark_black
+                            ? SchoolToolkitColors.darkBlack
                             : SchoolToolkitColors.grey,
                         fontSize: biggerTitle
                             ? FontSize.fontSize16
@@ -97,7 +97,7 @@ class InformationTileWidget extends StatelessWidget {
                       '${subTitle ?? 'Untitled'}',
                       style: TextStyle(
                         color: !biggerTitle
-                            ? SchoolToolkitColors.dark_black
+                            ? SchoolToolkitColors.darkBlack
                             : SchoolToolkitColors.grey,
                         fontSize: !biggerTitle
                             ? FontSize.fontSize16

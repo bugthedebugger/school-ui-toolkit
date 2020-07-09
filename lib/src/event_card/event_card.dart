@@ -19,7 +19,7 @@ class EventCard extends StatelessWidget {
     this.time,
     this.event,
     this.primaryColor = SchoolToolkitColors.brown,
-    this.secondaryColor = SchoolToolkitColors.light_brown,
+    this.secondaryColor = SchoolToolkitColors.lightBrown,
   }) : super(key: key);
 
   @override
@@ -36,7 +36,7 @@ class EventCard extends StatelessWidget {
           Text(
             '$time',
             style: TextStyle(
-              color: SchoolToolkitColors.dark_black,
+              color: SchoolToolkitColors.darkBlack,
               fontWeight: FontSize.semiBold,
               fontSize: FontSize.fontSize14,
             ),

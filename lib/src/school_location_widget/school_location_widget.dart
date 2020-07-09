@@ -65,7 +65,7 @@ class SchoolLocationWidget extends StatelessWidget {
                     '$address',
                     style: TextStyle(
                       fontSize: FontSize.fontSize14,
-                      color: SchoolToolkitColors.light_black,
+                      color: SchoolToolkitColors.lightBlack,
                     ),
                   ),
                 ],

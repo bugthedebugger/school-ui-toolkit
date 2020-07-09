@@ -24,7 +24,7 @@ class HighlightedIcon extends StatelessWidget {
           height: ScreenUtil().setWidth(144),
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: SchoolToolkitColors.blue_grey,
+            color: SchoolToolkitColors.blueGrey,
           ),
         ),
         Container(
@@ -40,7 +40,7 @@ class HighlightedIcon extends StatelessWidget {
             boxShadow: [
               BoxShadow(
                 blurRadius: ScreenUtil().setWidth(21),
-                color: SchoolToolkitColors.grey_shadow,
+                color: SchoolToolkitColors.greyShadow,
                 offset: Offset(
                   0,
                   ScreenUtil().setHeight(3),

@@ -25,7 +25,7 @@ class DeadlineCardExample extends StatelessWidget {
               ),
               DeadlineCard(
                 deadline: DateTime.now(),
-                secondaryColor: SchoolToolkitColors.dark_yellow,
+                secondaryColor: SchoolToolkitColors.darkYellow,
               ),
               SizedBox(
                 height: ScreenUtil().setHeight(5),

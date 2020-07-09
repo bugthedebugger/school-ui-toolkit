@@ -13,7 +13,7 @@ class DeadlineCard extends StatelessWidget {
     Key key,
     @required this.deadline,
     this.primaryColor = Colors.white,
-    this.secondaryColor = SchoolToolkitColors.teal_green,
+    this.secondaryColor = SchoolToolkitColors.tealGreen,
   })  : assert(deadline != null),
         super(key: key);
 
@@ -31,7 +31,7 @@ class DeadlineCard extends StatelessWidget {
         vertical: ScreenUtil().setWidth(5),
       ),
       decoration: BoxDecoration(
-        color: secondaryColor ?? SchoolToolkitColors.teal_green,
+        color: secondaryColor ?? SchoolToolkitColors.tealGreen,
         borderRadius: BorderRadius.circular(
           ScreenUtil().setWidth(5.0),
         ),

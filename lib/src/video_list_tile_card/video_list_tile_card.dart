@@ -13,6 +13,7 @@ class VideoListTileCard extends StatelessWidget {
   final EdgeInsets margin;
   final Color color;
   final bool showIcon;
+  final Function onTap;
 
   const VideoListTileCard({
     Key key,
@@ -23,6 +24,7 @@ class VideoListTileCard extends StatelessWidget {
     this.margin,
     this.color = Colors.transparent,
     this.showIcon = true,
+    this.onTap,
   })  : assert(thumbnailURL != null),
         super(key: key);
 
@@ -40,7 +42,7 @@ class VideoListTileCard extends StatelessWidget {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          onTap: () {},
+          onTap: onTap,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,

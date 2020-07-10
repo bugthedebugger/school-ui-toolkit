@@ -102,7 +102,7 @@ class InformationTileWidget extends StatelessWidget {
                       child: Text(
                         '${subTitle ?? 'Untitled'}',
                         style: TextStyle(
-                          color: !biggerTitle ? titleColor : subTitle,
+                          color: !biggerTitle ? titleColor : subTitleColor,
                           fontSize: !biggerTitle
                               ? FontSize.fontSize16
                               : FontSize.fontSize14,

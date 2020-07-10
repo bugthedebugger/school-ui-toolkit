@@ -20,8 +20,8 @@ class HighlightedIcon extends StatelessWidget {
       alignment: Alignment.center,
       children: <Widget>[
         Container(
-          width: ScreenUtil().setWidth(144),
-          height: ScreenUtil().setWidth(144),
+          width: ScreenUtil().setWidth(124),
+          height: ScreenUtil().setWidth(124),
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: SchoolToolkitColors.blueGrey,

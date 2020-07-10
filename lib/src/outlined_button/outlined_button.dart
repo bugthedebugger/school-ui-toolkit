@@ -7,12 +7,14 @@ class OutlinedButton extends StatelessWidget {
   final Function onPressed;
   final String label;
   final bool busy;
+  final EdgeInsets padding;
 
   const OutlinedButton({
     Key key,
     this.onPressed,
     this.label,
     this.busy = false,
+    this.padding,
   }) : super(key: key);
 
   @override
@@ -35,9 +37,10 @@ class OutlinedButton extends StatelessWidget {
       textColor: SchoolToolkitColors.blue,
       disabledTextColor: SchoolToolkitColors.grey,
       child: Padding(
-        padding: EdgeInsets.symmetric(
-          vertical: ScreenUtil().setWidth(16),
-        ),
+        padding: padding ??
+            EdgeInsets.symmetric(
+              vertical: ScreenUtil().setWidth(16),
+            ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,

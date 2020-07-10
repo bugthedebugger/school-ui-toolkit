@@ -70,7 +70,7 @@ class _SchoolToolkitTextFieldState extends State<SchoolToolkitTextField> {
             ScreenUtil().setWidth(5.0),
           ),
           borderSide: BorderSide(
-            color: Colors.transparent,
+            color: SchoolToolkitColors.lightBlue,
           ),
         ),
         contentPadding: EdgeInsets.symmetric(

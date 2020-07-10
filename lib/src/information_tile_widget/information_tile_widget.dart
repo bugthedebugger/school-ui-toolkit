@@ -15,6 +15,8 @@ class InformationTileWidget extends StatelessWidget {
   final Color iconColor;
   final Color iconBackgroundColor;
   final Function onTap;
+  final Color titleColor;
+  final Color subTitleColor;
 
   const InformationTileWidget({
     Key key,
@@ -29,6 +31,8 @@ class InformationTileWidget extends StatelessWidget {
     this.iconColor = SchoolToolkitColors.grey,
     this.iconBackgroundColor = Colors.white,
     this.onTap,
+    this.titleColor = SchoolToolkitColors.darkBlack,
+    this.subTitleColor = SchoolToolkitColors.grey,
   })  : assert(icon != null),
         super(key: key);
 
@@ -77,38 +81,36 @@ class InformationTileWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Container(
-                    width: ScreenUtil().setWidth(250),
-                    child: Text(
-                      '${title ?? 'Untitled'}',
-                      style: TextStyle(
-                        color: biggerTitle
-                            ? SchoolToolkitColors.darkBlack
-                            : SchoolToolkitColors.grey,
-                        fontSize: biggerTitle
-                            ? FontSize.fontSize16
-                            : FontSize.fontSize14,
-                        fontWeight:
-                            biggerTitle ? FontSize.bold : FontSize.regular,
+                  if (title != null)
+                    Container(
+                      width: ScreenUtil().setWidth(250),
+                      child: Text(
+                        '${title ?? 'Untitled'}',
+                        style: TextStyle(
+                          color: biggerTitle ? titleColor : subTitleColor,
+                          fontSize: biggerTitle
+                              ? FontSize.fontSize16
+                              : FontSize.fontSize14,
+                          fontWeight:
+                              biggerTitle ? FontSize.bold : FontSize.regular,
+                        ),
                       ),
                     ),
-                  ),
-                  Container(
-                    width: ScreenUtil().setWidth(250),
-                    child: Text(
-                      '${subTitle ?? 'Untitled'}',
-                      style: TextStyle(
-                        color: !biggerTitle
-                            ? SchoolToolkitColors.darkBlack
-                            : SchoolToolkitColors.grey,
-                        fontSize: !biggerTitle
-                            ? FontSize.fontSize16
-                            : FontSize.fontSize14,
-                        fontWeight:
-                            !biggerTitle ? FontSize.bold : FontSize.regular,
+                  if (subTitle != null)
+                    Container(
+                      width: ScreenUtil().setWidth(250),
+                      child: Text(
+                        '${subTitle ?? 'Untitled'}',
+                        style: TextStyle(
+                          color: !biggerTitle ? titleColor : subTitle,
+                          fontSize: !biggerTitle
+                              ? FontSize.fontSize16
+                              : FontSize.fontSize14,
+                          fontWeight:
+                              !biggerTitle ? FontSize.bold : FontSize.regular,
+                        ),
                       ),
                     ),
-                  ),
                 ],
               ),
             ],

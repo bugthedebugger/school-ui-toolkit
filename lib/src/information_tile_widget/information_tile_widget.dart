@@ -14,6 +14,7 @@ class InformationTileWidget extends StatelessWidget {
   final bool rounded;
   final Color iconColor;
   final Color iconBackgroundColor;
+  final Function onTap;
 
   const InformationTileWidget({
     Key key,
@@ -27,6 +28,7 @@ class InformationTileWidget extends StatelessWidget {
     this.rounded = true,
     this.iconColor = SchoolToolkitColors.grey,
     this.iconBackgroundColor = Colors.white,
+    this.onTap,
   })  : assert(icon != null),
         super(key: key);
 
@@ -44,7 +46,7 @@ class InformationTileWidget extends StatelessWidget {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          onTap: () {},
+          onTap: onTap,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,

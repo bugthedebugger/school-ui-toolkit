@@ -42,6 +42,8 @@ class _SchoolToolkitTextFieldState extends State<SchoolToolkitTextField> {
       onFieldSubmitted: widget.onFieldSubmitted,
       onTap: widget.onTap,
       decoration: InputDecoration(
+        fillColor: SchoolToolkitColors.blueGrey,
+        filled: true,
         hintStyle: TextStyle(
           fontSize: FontSize.fontSize18,
           color: SchoolToolkitColors.mediumGrey,
@@ -53,6 +55,14 @@ class _SchoolToolkitTextFieldState extends State<SchoolToolkitTextField> {
           ),
           borderSide: BorderSide(
             color: SchoolToolkitColors.lightBlue,
+          ),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(
+            ScreenUtil().setWidth(5.0),
+          ),
+          borderSide: BorderSide(
+            color: SchoolToolkitColors.lightGrey,
           ),
         ),
         focusedBorder: OutlineInputBorder(

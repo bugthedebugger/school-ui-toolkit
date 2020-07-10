@@ -54,7 +54,7 @@ class _SchoolToolkitTextFieldState extends State<SchoolToolkitTextField> {
             ScreenUtil().setWidth(5.0),
           ),
           borderSide: BorderSide(
-            color: SchoolToolkitColors.lightBlue,
+            color: Colors.transparent,
           ),
         ),
         enabledBorder: OutlineInputBorder(
@@ -62,7 +62,7 @@ class _SchoolToolkitTextFieldState extends State<SchoolToolkitTextField> {
             ScreenUtil().setWidth(5.0),
           ),
           borderSide: BorderSide(
-            color: SchoolToolkitColors.lightGrey,
+            color: Colors.transparent,
           ),
         ),
         focusedBorder: OutlineInputBorder(
@@ -70,7 +70,7 @@ class _SchoolToolkitTextFieldState extends State<SchoolToolkitTextField> {
             ScreenUtil().setWidth(5.0),
           ),
           borderSide: BorderSide(
-            color: SchoolToolkitColors.lightBlue,
+            color: Colors.transparent,
           ),
         ),
         contentPadding: EdgeInsets.symmetric(

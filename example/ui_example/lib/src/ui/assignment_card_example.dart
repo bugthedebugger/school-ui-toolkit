@@ -23,6 +23,7 @@ class AssignmentCardExample extends StatelessWidget {
                       'Chapter 3 - Q.no 1 - Q.no 10 (Please submit in word format with names attached)',
                   subject: 'Mathematics',
                   teacher: 'Dr. Stone',
+                  onUploadHandler: () {},
                 ),
               ),
               Padding(
@@ -34,6 +35,7 @@ class AssignmentCardExample extends StatelessWidget {
                   subject: 'Mathematics',
                   teacher: 'Dr. Stone',
                   deadlineBackgroundColor: SchoolToolkitColors.darkYellow,
+                  onUploadHandler: () {},
                 ),
               ),
               Padding(
@@ -45,6 +47,17 @@ class AssignmentCardExample extends StatelessWidget {
                   subject: 'Mathematics',
                   teacher: 'Dr. Stone',
                   deadlineBackgroundColor: SchoolToolkitColors.red,
+                  onUploadHandler: () {
+                    print('Handle upload');
+                  },
+                  fileName: 'Roll24_RamanShrestha.pdf',
+                  fileSize: '1.2 MB',
+                  onFileTapHandler: () {
+                    print('Handle file tap');
+                  },
+                  onUnSubmitHandler: () {
+                    print('Handle unsubmit');
+                  },
                 ),
               ),
             ],

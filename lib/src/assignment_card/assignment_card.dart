@@ -12,6 +12,11 @@ class AssignmentCard extends StatelessWidget {
   final DateTime deadline;
   final Color deadlineBackgroundColor;
   final Color deadlineTextColor;
+  final Function onUploadHandler;
+  final Function onUnSubmitHandler;
+  final Function onFileTapHandler;
+  final String fileName;
+  final String fileSize;
 
   const AssignmentCard({
     Key key,
@@ -21,6 +26,11 @@ class AssignmentCard extends StatelessWidget {
     this.deadline,
     this.deadlineBackgroundColor,
     this.deadlineTextColor,
+    this.onUploadHandler,
+    this.onUnSubmitHandler,
+    this.onFileTapHandler,
+    this.fileName,
+    this.fileSize,
   }) : super(key: key);
 
   @override
@@ -122,12 +132,116 @@ class AssignmentCard extends StatelessWidget {
           SizedBox(
             height: ScreenUtil().setHeight(15),
           ),
-          if (deadline != null)
-            DeadlineCard(
-              deadline: deadline,
-              primaryColor: deadlineTextColor,
-              secondaryColor: deadlineBackgroundColor,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              if (deadline != null)
+                DeadlineCard(
+                  deadline: deadline,
+                  primaryColor: deadlineTextColor,
+                  secondaryColor: deadlineBackgroundColor,
+                ),
+              Expanded(
+                child: Container(),
+              ),
+              if (onUploadHandler != null)
+                ConstrainedBox(
+                  constraints: BoxConstraints(
+                    maxHeight: ScreenUtil().setWidth(36),
+                    maxWidth: ScreenUtil().setWidth(36),
+                  ),
+                  child: FlatButton(
+                    onPressed: onUploadHandler,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(
+                        ScreenUtil().setWidth(10),
+                      ),
+                      side: BorderSide(
+                        color: SchoolToolkitColors.blue,
+                        width: ScreenUtil().setWidth(1),
+                      ),
+                    ),
+                    splashColor: SchoolToolkitColors.lightBlue,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: ScreenUtil().setWidth(5.0),
+                    ),
+                    child: Icon(
+                      Icons.file_upload,
+                      size: FontSize.fontSize18,
+                      color: SchoolToolkitColors.blue,
+                    ),
+                  ),
+                ),
+            ],
+          ),
+          if (fileName != null) ...[
+            SizedBox(
+              height: ScreenUtil().setHeight(10),
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Icon(
+                  FontAwesomeIcons.file,
+                  color: SchoolToolkitColors.mediumGrey,
+                  size: FontSize.fontSize16,
+                ),
+                SizedBox(
+                  width: ScreenUtil().setWidth(7),
+                ),
+                GestureDetector(
+                  onTap: onFileTapHandler,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        '$fileName',
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          color: SchoolToolkitColors.blue,
+                          fontSize: FontSize.fontSize14,
+                          fontWeight: FontSize.medium,
+                        ),
+                      ),
+                      Text(
+                        '$fileSize',
+                        style: TextStyle(
+                          color: SchoolToolkitColors.mediumGrey,
+                          fontSize: FontSize.fontSize14,
+                          fontWeight: FontSize.medium,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Container(),
+                ),
+                GestureDetector(
+                  onTap: onUnSubmitHandler,
+                  child: Container(
+                    width: ScreenUtil().setWidth(32),
+                    height: ScreenUtil().setHeight(32),
+                    padding: EdgeInsets.all(
+                      ScreenUtil().setWidth(5.0),
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(
+                      FontAwesomeIcons.times,
+                      size: FontSize.fontSize14,
+                      color: SchoolToolkitColors.mediumGrey,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ]
         ],
       ),
     );

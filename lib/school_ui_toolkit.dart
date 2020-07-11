@@ -20,3 +20,4 @@ export 'package:school_ui_toolkit/src/information_tile_widget/information_tile_w
 export 'package:school_ui_toolkit/src/profile_card/profile_card.dart';
 export 'package:school_ui_toolkit/src/outlined_button/outlined_button.dart';
 export 'package:school_ui_toolkit/src/notice_card/notice_card.dart';
+export 'package:school_ui_toolkit/src/label_card/label_card.dart';

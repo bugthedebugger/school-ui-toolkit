@@ -1,11 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:intl/intl.dart';
 import 'package:school_ui_toolkit/src/colors/school_toolkit_colors.dart';
 import 'package:school_ui_toolkit/src/font_size/font_size.dart';
+import 'package:school_ui_toolkit/src/label_card/label_card.dart';
 import 'package:school_ui_toolkit/src/school_toolkit_card/school_toolkit_card.dart';
 
 class NoticeCard extends StatelessWidget {
+  final String title;
+  final String subTitile;
+  final Function onTap;
+  final DateTime date;
+
+  const NoticeCard({
+    Key key,
+    this.title,
+    this.subTitile,
+    this.onTap,
+    this.date,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return SchoolToolkitCard(
@@ -35,7 +50,7 @@ class NoticeCard extends StatelessWidget {
             height: ScreenUtil().setHeight(10),
           ),
           Text(
-            'title',
+            '$title',
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontSize.semiBold,
@@ -47,7 +62,7 @@ class NoticeCard extends StatelessWidget {
             height: ScreenUtil().setHeight(10),
           ),
           Text(
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+            '$subTitile',
             textAlign: TextAlign.center,
             overflow: TextOverflow.ellipsis,
             maxLines: 3,
@@ -63,32 +78,14 @@ class NoticeCard extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Container(
-                height: ScreenUtil().setHeight(32),
-                padding: EdgeInsets.symmetric(
-                  horizontal: ScreenUtil().setWidth(14),
-                  vertical: ScreenUtil().setHeight(5),
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.black26,
-                  borderRadius: BorderRadius.circular(
-                    ScreenUtil().setWidth(5),
-                  ),
-                ),
-                child: Text(
-                  '19 Jul, 2020',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontSize.bold,
-                    fontSize: FontSize.fontSize16,
-                  ),
-                ),
+              LabelCard(
+                label: '${DateFormat('d MMM, yyyy').format(date)}',
               ),
               Expanded(
                 child: Container(),
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: onTap,
                 child: Text(
                   'READ MORE',
                   style: TextStyle(
@@ -99,7 +96,7 @@ class NoticeCard extends StatelessWidget {
                 ),
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: onTap,
                 icon: Icon(
                   FontAwesomeIcons.arrowRight,
                   color: Colors.white,

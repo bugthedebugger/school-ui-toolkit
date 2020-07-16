@@ -12,8 +12,10 @@ class SchoolLocationWidgetExample extends StatelessWidget {
       body: Center(
         child: SchoolLocationWidget(
           imageURL: 'http://via.placeholder.com/350x350',
-          address: 'Sallaghari, Bhaktapur',
-          name: 'Nesfield int college',
+          address:
+              'Sallaghari, Bhaktapur asdf ad asdf asdf asdf asdf asdf asdf asdf ',
+          name:
+              'Nesfield int college asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf adf ',
         ),
       ),
     );

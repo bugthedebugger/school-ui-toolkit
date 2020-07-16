@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/screenutil.dart';
 import 'package:school_ui_toolkit/src/colors/school_toolkit_colors.dart';
 import 'package:school_ui_toolkit/src/font_size/font_size.dart';
@@ -44,12 +45,20 @@ class SchoolLocationWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text(
-                '$name',
-                style: TextStyle(
-                  fontSize: FontSize.fontSize16,
-                  fontWeight: FontSize.bold,
-                  color: SchoolToolkitColors.darkBlack,
+              Container(
+                width: ScreenUtil().setWidth(250),
+                height: ScreenUtil().setHeight(25),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  physics: AlwaysScrollableScrollPhysics(),
+                  child: Text(
+                    '$name',
+                    style: TextStyle(
+                      fontSize: FontSize.fontSize16,
+                      fontWeight: FontSize.bold,
+                      color: SchoolToolkitColors.darkBlack,
+                    ),
+                  ),
                 ),
               ),
               Row(
@@ -61,11 +70,19 @@ class SchoolLocationWidget extends StatelessWidget {
                     color: SchoolToolkitColors.blue,
                     size: FontSize.fontSize18,
                   ),
-                  Text(
-                    '$address',
-                    style: TextStyle(
-                      fontSize: FontSize.fontSize14,
-                      color: SchoolToolkitColors.lightBlack,
+                  Container(
+                    width: ScreenUtil().setWidth(250),
+                    height: ScreenUtil().setHeight(25),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Text(
+                        '$address',
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontSize: FontSize.fontSize14,
+                          color: SchoolToolkitColors.lightBlack,
+                        ),
+                      ),
                     ),
                   ),
                 ],

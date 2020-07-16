@@ -11,7 +11,7 @@ class NoticeCard extends StatelessWidget {
   final String title;
   final String subTitile;
   final Function onTap;
-  final DateTime date;
+  final String date;
 
   const NoticeCard({
     Key key,
@@ -79,7 +79,7 @@ class NoticeCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               LabelCard(
-                label: '${DateFormat('d MMM, yyyy').format(date)}',
+                label: '$date',
               ),
               Expanded(
                 child: Container(),

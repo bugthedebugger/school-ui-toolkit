@@ -10,7 +10,7 @@ class CalendarExample extends StatelessWidget {
         title: Text('Calendar'),
         centerTitle: true,
       ),
-      body: Calendar(
+      body: NepaliCalendar(
         startExpanded: true,
         onDateSelected: (date) {
           print('Selected date: $date');

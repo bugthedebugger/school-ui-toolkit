@@ -151,6 +151,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.8"
+  nepali_date_picker:
+    dependency: "direct main"
+    description:
+      name: nepali_date_picker
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.1.0"
+  nepali_utils:
+    dependency: transitive
+    description:
+      name: nepali_utils
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.2.1"
   path:
     dependency: transitive
     description:

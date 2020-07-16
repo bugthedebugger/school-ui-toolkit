@@ -36,6 +36,7 @@ dependencies:
   font_awesome_flutter: ^8.8.1
   intl: ^0.16.1
   google_fonts: ^1.1.0
+  nepali_date_picker: ^4.1.0
 
 dev_dependencies:
   flutter_test:

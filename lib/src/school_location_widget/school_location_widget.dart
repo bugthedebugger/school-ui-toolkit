@@ -71,7 +71,7 @@ class SchoolLocationWidget extends StatelessWidget {
                     size: FontSize.fontSize18,
                   ),
                   Container(
-                    width: ScreenUtil().setWidth(250),
+                    width: ScreenUtil().setWidth(232),
                     height: ScreenUtil().setHeight(25),
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,

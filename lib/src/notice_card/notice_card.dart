@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:intl/intl.dart';
 import 'package:school_ui_toolkit/src/colors/school_toolkit_colors.dart';
 import 'package:school_ui_toolkit/src/font_size/font_size.dart';
 import 'package:school_ui_toolkit/src/label_card/label_card.dart';

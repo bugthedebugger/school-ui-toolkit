@@ -33,7 +33,9 @@ class CalendarDateElement extends StatelessWidget {
             shape: BoxShape.circle,
             color: SchoolToolkitColors.lighterBlue,
             border: Border.all(
-              color: SchoolToolkitColors.blue,
+              color: today && selected
+                  ? SchoolToolkitColors.blue
+                  : Colors.transparent,
               width: ScreenUtil().setWidth(2.0),
             ),
           ),

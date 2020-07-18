@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:school_ui_toolkit/school_ui_toolkit.dart';
 
-class CalendarExample extends StatelessWidget {
+class NepaliCalendarExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('Calendar'),
+        title: Text('Nepali Calendar'),
         centerTitle: true,
       ),
-      body: Calendar(
+      body: NepaliCalendar(
         startExpanded: true,
         onDateSelected: (date) {
           print('Selected date: $date');
@@ -21,15 +21,6 @@ class CalendarExample extends StatelessWidget {
         onPreviousMonth: (date) {
           print('Previous month: $date');
         },
-        calendarEvents: [
-          DateTime.now(),
-        ],
-        recurringEventsByDay: [
-          DateTime(2020, 7, 1),
-        ],
-        recurringEventsByWeekday: [
-          DateTime.sunday,
-        ],
       ),
     );
   }

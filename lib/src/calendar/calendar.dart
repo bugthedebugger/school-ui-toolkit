@@ -5,12 +5,16 @@ import 'package:intl/intl.dart';
 import 'package:school_ui_toolkit/src/calendar/calendar_date_element.dart';
 import 'package:school_ui_toolkit/src/colors/school_toolkit_colors.dart';
 import 'package:school_ui_toolkit/src/font_size/font_size.dart';
+import 'package:school_ui_toolkit/src/utils/calendar_utils.dart';
 
 class Calendar extends StatefulWidget {
   final bool startExpanded;
   final Function(DateTime) onDateSelected;
   final Function(DateTime) onPreviousMonth;
   final Function(DateTime) onNextMonth;
+  final List<int> recurringEventsByWeekday;
+  final List<DateTime> calendarEvents;
+  final List<DateTime> recurringEventsByDay;
 
   const Calendar({
     Key key,
@@ -18,6 +22,9 @@ class Calendar extends StatefulWidget {
     this.onDateSelected,
     this.onPreviousMonth,
     this.onNextMonth,
+    this.calendarEvents,
+    this.recurringEventsByWeekday,
+    this.recurringEventsByDay,
   }) : super(key: key);
 
   @override
@@ -258,19 +265,55 @@ class _CalendarState extends State<Calendar>
                                 ),
                                 TableRow(
                                   children: dateList.map((date) {
-                                    return CalendarDateElement(
-                                      date: date.day,
-                                      today: date.day == DateTime.now().day &&
-                                          date.month == DateTime.now().month,
-                                      fade: date.month != _selectedDate.month,
-                                      selected: date.day == _selectedDate.day &&
-                                          date.month == _selectedDate.month,
-                                      onTap: () {
-                                        _selectDate(date);
-                                        if (widget.onDateSelected != null) {
-                                          widget.onDateSelected(date);
-                                        }
-                                      },
+                                    return Column(
+                                      children: <Widget>[
+                                        CalendarDateElement(
+                                          date: date.day,
+                                          today:
+                                              date.day == DateTime.now().day &&
+                                                  date.month ==
+                                                      DateTime.now().month,
+                                          fade:
+                                              date.month != _selectedDate.month,
+                                          selected: date.day ==
+                                                  _selectedDate.day &&
+                                              date.month == _selectedDate.month,
+                                          onTap: () {
+                                            _selectDate(date);
+                                            if (widget.onDateSelected != null) {
+                                              widget.onDateSelected(date);
+                                            }
+                                          },
+                                        ),
+                                        SizedBox(
+                                          height: ScreenUtil().setHeight(5.0),
+                                        ),
+                                        Container(
+                                          width: ScreenUtil().setWidth(6),
+                                          height: ScreenUtil().setWidth(6),
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            color:
+                                                CalendarUtils
+                                                            .checkIfRecurringByWeekDay(
+                                                                date,
+                                                                widget
+                                                                    .recurringEventsByWeekday) ||
+                                                        CalendarUtils
+                                                            .checkIfRecurringByDay(
+                                                                date,
+                                                                widget
+                                                                    .recurringEventsByDay) ||
+                                                        CalendarUtils
+                                                            .checkIfCalendarEvent(
+                                                                date,
+                                                                widget
+                                                                    .calendarEvents)
+                                                    ? SchoolToolkitColors.blue
+                                                    : Colors.transparent,
+                                          ),
+                                        ),
+                                      ],
                                     );
                                   }).toList(),
                                 ),
@@ -311,19 +354,47 @@ class _CalendarState extends State<Calendar>
                             ),
                             TableRow(
                               children: _weekDayDateTimeList.map((date) {
-                                return CalendarDateElement(
-                                  date: date.day,
-                                  today: date.day == DateTime.now().day &&
-                                      date.month == DateTime.now().month,
-                                  fade: date.month != _selectedDate.month,
-                                  selected: date.day == _selectedDate.day &&
-                                      date.month == _selectedDate.month,
-                                  onTap: () {
-                                    _selectDate(date);
-                                    if (widget.onDateSelected != null) {
-                                      widget.onDateSelected(date);
-                                    }
-                                  },
+                                return Column(
+                                  children: <Widget>[
+                                    CalendarDateElement(
+                                      date: date.day,
+                                      today: date.day == DateTime.now().day &&
+                                          date.month == DateTime.now().month,
+                                      fade: date.month != _selectedDate.month,
+                                      selected: date.day == _selectedDate.day &&
+                                          date.month == _selectedDate.month,
+                                      onTap: () {
+                                        _selectDate(date);
+                                        if (widget.onDateSelected != null) {
+                                          widget.onDateSelected(date);
+                                        }
+                                      },
+                                    ),
+                                    SizedBox(
+                                      height: ScreenUtil().setHeight(5.0),
+                                    ),
+                                    Container(
+                                      width: ScreenUtil().setWidth(6),
+                                      height: ScreenUtil().setWidth(6),
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: CalendarUtils
+                                                    .checkIfRecurringByWeekDay(
+                                                        date,
+                                                        widget
+                                                            .recurringEventsByWeekday) ||
+                                                CalendarUtils.checkIfRecurringByDay(
+                                                    date,
+                                                    widget
+                                                        .recurringEventsByDay) ||
+                                                CalendarUtils
+                                                    .checkIfCalendarEvent(date,
+                                                        widget.calendarEvents)
+                                            ? SchoolToolkitColors.blue
+                                            : Colors.transparent,
+                                      ),
+                                    ),
+                                  ],
                                 );
                               }).toList(),
                             ),

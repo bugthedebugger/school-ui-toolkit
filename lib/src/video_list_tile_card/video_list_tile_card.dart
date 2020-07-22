@@ -57,6 +57,7 @@ class VideoListTileCard extends StatelessWidget {
                   color: SchoolToolkitColors.black,
                   child: CachedNetworkImage(
                     imageUrl: thumbnailURL,
+                    errorWidget: (context, string, _) => Container(),
                     width: ScreenUtil().setWidth(60),
                     height: ScreenUtil().setWidth(60),
                     fit: BoxFit.cover,

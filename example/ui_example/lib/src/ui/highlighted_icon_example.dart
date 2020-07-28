@@ -6,7 +6,7 @@ class HighlightedIconExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('School location widget'),
+        title: Text('Highlighted Icon'),
         centerTitle: true,
       ),
       body: Center(

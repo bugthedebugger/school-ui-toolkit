@@ -1,1 +1,7 @@
-## [2.4.0] - Prepared package for release with over 18 different reuseable widgets.
+## [2.4.1]
+
+- Updating readme
+
+## [2.4.0]
+
+- Prepared package for release with over 18 different reuseable widgets.

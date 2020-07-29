@@ -1,3 +1,1 @@
-## [0.0.1] - TODO: Add release date.
-
-* TODO: Describe initial release.
+## [2.4.0] - Prepared package for release with over 18 different reuseable widgets.

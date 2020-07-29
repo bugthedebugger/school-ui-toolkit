@@ -17,6 +17,7 @@ class UIExample extends StatelessWidget {
       ),
       builder: (context, child) {
         ScreenUtil.init(
+          context,
           width: ScreenSize.width,
           height: ScreenSize.height,
           allowFontScaling: true,

@@ -1,7 +1,6 @@
 name: school_ui_toolkit
 description: A school UI toolkit.
 version: 2.4.0
-author: BugTheDebugger
 homepage: https://wasp-labs.com/
 
 environment:

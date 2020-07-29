@@ -1,3 +1,7 @@
+## [2.4.2]
+
+- Moving examples files
+
 ## [2.4.1]
 
 - Updating readme

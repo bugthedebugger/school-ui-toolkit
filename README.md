@@ -21,7 +21,12 @@ A basic UI toolkit to get you started with flutter application development.
 - **DeadlineCard:** Display a deadline
 - **AssignmentCard:** Displays the assignment, deadline, subject with optional parameters to handle upload
 - **HighlightedIcon:** Custom container that highlights the icon passed. Takes in an optional busy parameter to display loading indicator.
-- **FeaturedVideoCard:**
+- **FeaturedVideoCard:** Display a featured video thumbnail with a title.
+- **VideoListTileCard:** Display a listtile with thumbnail, title and author.
+- **ProfileCard:** Custom profile card.
+- **BusRouteWidget:** Display a bus route. Takes in title and a subtitle.
+- **NoticeCard:** Custom notice widget that takes in title, subtitle, formatted date string with exposed on tap handler.
+- **LabelCard:** Display a custom text label. Takes in label string, width, height, text style and color.
 
 ## Example
 

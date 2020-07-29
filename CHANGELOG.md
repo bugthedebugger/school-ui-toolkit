@@ -1,3 +1,7 @@
+## [2.4.3]
+
+- Updating pubspec description
+
 ## [2.4.2]
 
 - Moving examples files

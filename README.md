@@ -1,6 +1,6 @@
 # Basic UI Toolkit [Theme: School]
 
-![Featured image](screenshot/screenshot.png)
+![Featured image](https://user-images.githubusercontent.com/9513691/88762659-541ef700-d191-11ea-8492-19acdc90e71c.png)
 
 ## Descrption
 

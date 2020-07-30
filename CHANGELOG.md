@@ -1,3 +1,7 @@
+## [2.4.4]
+
+- Bug fix: Fixed setHeight/setWidth being called on null issue.
+
 ## [2.4.3]
 
 - Updating pubspec description

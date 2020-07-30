@@ -156,7 +156,6 @@ class _CalendarState extends State<Calendar>
         height: ScreenSize.height,
         allowFontScaling: true,
       );
-      ;
     }
 
     return Column(

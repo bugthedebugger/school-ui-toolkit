@@ -42,7 +42,6 @@ class _SchoolToolkitTextFieldState extends State<SchoolToolkitTextField> {
         height: ScreenSize.height,
         allowFontScaling: true,
       );
-      ;
     }
 
     return TextFormField(

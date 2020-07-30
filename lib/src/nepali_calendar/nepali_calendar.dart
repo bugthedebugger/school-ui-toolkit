@@ -156,7 +156,6 @@ class _NepaliCalendarState extends State<NepaliCalendar>
         height: ScreenSize.height,
         allowFontScaling: true,
       );
-      ;
     }
 
     return Column(

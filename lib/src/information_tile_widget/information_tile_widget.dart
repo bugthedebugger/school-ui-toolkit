@@ -46,7 +46,6 @@ class InformationTileWidget extends StatelessWidget {
         height: ScreenSize.height,
         allowFontScaling: true,
       );
-      ;
     }
 
     return Container(

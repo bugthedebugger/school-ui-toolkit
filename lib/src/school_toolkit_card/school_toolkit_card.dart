@@ -38,7 +38,6 @@ class SchoolToolkitCard extends StatelessWidget {
         height: ScreenSize.height,
         allowFontScaling: true,
       );
-      ;
     }
 
     return AnimatedContainer(

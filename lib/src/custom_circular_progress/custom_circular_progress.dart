@@ -20,7 +20,6 @@ class CustomCircularProgress extends StatelessWidget {
         height: ScreenSize.height,
         allowFontScaling: true,
       );
-      ;
     }
 
     return Theme(

@@ -27,7 +27,6 @@ class SchoolToolkitRoleButton extends StatelessWidget {
         height: ScreenSize.height,
         allowFontScaling: true,
       );
-      ;
     }
 
     return SchoolToolkitCard(

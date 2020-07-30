@@ -31,7 +31,6 @@ class RoutineCard extends StatelessWidget {
         height: ScreenSize.height,
         allowFontScaling: true,
       );
-      ;
     }
 
     return SchoolToolkitCard(

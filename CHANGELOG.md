@@ -1,3 +1,7 @@
+## [2.4.5]
+
+- Cleaned dangling semicolons and dangling imports
+
 ## [2.4.4]
 
 - Bug fix: Fixed setHeight/setWidth being called on null issue.

@@ -43,7 +43,6 @@ class AssignmentCard extends StatelessWidget {
         height: ScreenSize.height,
         allowFontScaling: true,
       );
-      ;
     }
 
     return Container(

@@ -32,7 +32,6 @@ class EventCard extends StatelessWidget {
         height: ScreenSize.height,
         allowFontScaling: true,
       );
-      ;
     }
 
     return SchoolToolkitCard(

@@ -27,7 +27,6 @@ class OutlinedButton extends StatelessWidget {
         height: ScreenSize.height,
         allowFontScaling: true,
       );
-      ;
     }
 
     return FlatButton(

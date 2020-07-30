@@ -30,7 +30,6 @@ class NoticeCard extends StatelessWidget {
         height: ScreenSize.height,
         allowFontScaling: true,
       );
-      ;
     }
 
     return SchoolToolkitCard(

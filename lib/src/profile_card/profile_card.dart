@@ -35,7 +35,6 @@ class ProfileCard extends StatelessWidget {
         height: ScreenSize.height,
         allowFontScaling: true,
       );
-      ;
     }
 
     return SchoolToolkitCard(

@@ -30,7 +30,6 @@ class CalendarDateElement extends StatelessWidget {
         height: ScreenSize.height,
         allowFontScaling: true,
       );
-      ;
     }
 
     if (today) {

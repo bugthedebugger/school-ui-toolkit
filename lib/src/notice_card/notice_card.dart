@@ -5,6 +5,7 @@ import 'package:school_ui_toolkit/src/colors/school_toolkit_colors.dart';
 import 'package:school_ui_toolkit/src/font_size/font_size.dart';
 import 'package:school_ui_toolkit/src/label_card/label_card.dart';
 import 'package:school_ui_toolkit/src/school_toolkit_card/school_toolkit_card.dart';
+import 'package:school_ui_toolkit/src/utils/screen_size.dart';
 
 class NoticeCard extends StatelessWidget {
   final String title;
@@ -22,6 +23,16 @@ class NoticeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (ScreenUtil() == null) {
+      ScreenUtil.init(
+        context,
+        width: ScreenSize.width,
+        height: ScreenSize.height,
+        allowFontScaling: true,
+      );
+      ;
+    }
+
     return SchoolToolkitCard(
       active: true,
       height: ScreenUtil().setHeight(275),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/screenutil.dart';
 import 'package:school_ui_toolkit/school_ui_toolkit.dart';
 import 'package:school_ui_toolkit/src/colors/school_toolkit_colors.dart';
+import 'package:school_ui_toolkit/src/utils/screen_size.dart';
 
 class SchoolToolkitTextField extends StatefulWidget {
   final bool obscureText;
@@ -34,6 +35,16 @@ class SchoolToolkitTextField extends StatefulWidget {
 class _SchoolToolkitTextFieldState extends State<SchoolToolkitTextField> {
   @override
   Widget build(BuildContext context) {
+    if (ScreenUtil() == null) {
+      ScreenUtil.init(
+        context,
+        width: ScreenSize.width,
+        height: ScreenSize.height,
+        allowFontScaling: true,
+      );
+      ;
+    }
+
     return TextFormField(
       controller: widget.controller,
       obscureText: widget.obscureText,

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:school_ui_toolkit/school_ui_toolkit.dart';
 import 'package:school_ui_toolkit/src/font_size/font_size.dart';
+import 'package:school_ui_toolkit/src/utils/screen_size.dart';
 
 class FeaturedVideoCard extends StatelessWidget {
   final String thumbnailURL;
@@ -20,6 +21,16 @@ class FeaturedVideoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (ScreenUtil() == null) {
+      ScreenUtil.init(
+        context,
+        width: ScreenSize.width,
+        height: ScreenSize.height,
+        allowFontScaling: true,
+      );
+      ;
+    }
+
     return ClipRRect(
       borderRadius: BorderRadius.circular(
         ScreenUtil().setWidth(10),

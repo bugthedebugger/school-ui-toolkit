@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:school_ui_toolkit/school_ui_toolkit.dart';
 import 'package:school_ui_toolkit/src/font_size/font_size.dart';
+import 'package:school_ui_toolkit/src/utils/screen_size.dart';
 
 class DeadlineCard extends StatelessWidget {
   final DateTime deadline;
@@ -19,6 +20,16 @@ class DeadlineCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (ScreenUtil() == null) {
+      ScreenUtil.init(
+        context,
+        width: ScreenSize.width,
+        height: ScreenSize.height,
+        allowFontScaling: true,
+      );
+      ;
+    }
+
     return Container(
       height: ScreenUtil().setHeight(40),
       constraints: BoxConstraints(

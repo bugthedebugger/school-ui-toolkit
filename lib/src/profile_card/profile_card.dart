@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:school_ui_toolkit/src/colors/school_toolkit_colors.dart';
 import 'package:school_ui_toolkit/src/information_tile_widget/information_tile_widget.dart';
 import 'package:school_ui_toolkit/src/school_toolkit_card/school_toolkit_card.dart';
+import 'package:school_ui_toolkit/src/utils/screen_size.dart';
 import 'package:school_ui_toolkit/src/video_list_tile_card/video_list_tile_card.dart';
 
 class ProfileCard extends StatelessWidget {
@@ -27,6 +28,16 @@ class ProfileCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (ScreenUtil() == null) {
+      ScreenUtil.init(
+        context,
+        width: ScreenSize.width,
+        height: ScreenSize.height,
+        allowFontScaling: true,
+      );
+      ;
+    }
+
     return SchoolToolkitCard(
       margin: margin,
       backgroundColor: Colors.white,

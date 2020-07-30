@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:school_ui_toolkit/src/colors/school_toolkit_colors.dart';
+import 'package:school_ui_toolkit/src/utils/screen_size.dart';
 
 class CustomCircularProgress extends StatelessWidget {
   final Color color;
@@ -12,6 +13,16 @@ class CustomCircularProgress extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (ScreenUtil() == null) {
+      ScreenUtil.init(
+        context,
+        width: ScreenSize.width,
+        height: ScreenSize.height,
+        allowFontScaling: true,
+      );
+      ;
+    }
+
     return Theme(
       data: ThemeData(
         accentColor: color,

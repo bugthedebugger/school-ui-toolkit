@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:school_ui_toolkit/src/colors/school_toolkit_colors.dart';
 import 'package:school_ui_toolkit/src/deadline_card/deadline_card.dart';
 import 'package:school_ui_toolkit/src/font_size/font_size.dart';
+import 'package:school_ui_toolkit/src/utils/screen_size.dart';
 
 class AssignmentCard extends StatelessWidget {
   final String question;
@@ -35,6 +36,16 @@ class AssignmentCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (ScreenUtil() == null) {
+      ScreenUtil.init(
+        context,
+        width: ScreenSize.width,
+        height: ScreenSize.height,
+        allowFontScaling: true,
+      );
+      ;
+    }
+
     return Container(
       width: ScreenUtil().setWidth(374),
       padding: EdgeInsets.symmetric(

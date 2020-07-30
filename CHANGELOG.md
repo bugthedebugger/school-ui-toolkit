@@ -1,6 +1,10 @@
+## [2.4.6]
+
+- Updating readme: adding example for each widget.
+
 ## [2.4.5]
 
-- Cleaned dangling semicolons and dangling imports
+- Cleaned dangling semicolons and dangling imports.
 
 ## [2.4.4]
 
@@ -8,15 +12,15 @@
 
 ## [2.4.3]
 
-- Updating pubspec description
+- Updating pubspec description.
 
 ## [2.4.2]
 
-- Moving examples files
+- Moving examples files.
 
 ## [2.4.1]
 
-- Updating readme
+- Updating readme.
 
 ## [2.4.0]
 

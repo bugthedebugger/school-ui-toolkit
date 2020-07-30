@@ -32,6 +32,344 @@ A basic UI toolkit to get you started with flutter application development.
 
 The example file contains a catalog for all the available widgets.
 
+### SchoolToolkitButton
+
+```
+SchoolToolkitButton(
+    onPressed: () {
+        // handle on pressed
+    },
+    busy: true, // defaults to false
+    label: 'Text Label'.toUpperCase(),
+),
+```
+
+![toolkit button](https://user-images.githubusercontent.com/9513691/88875257-aec35c00-d240-11ea-958c-90a26ea70a6f.gif)
+
+### SchoolLocationWidget
+
+```
+SchoolLocationWidget(
+    imageURL: 'http://via.placeholder.com/350x350',
+    address: 'Area 69',
+    name: 'Alien High School',
+),
+```
+
+![school location widget](https://user-images.githubusercontent.com/9513691/88875572-34470c00-d241-11ea-946b-f55ce8ff658f.gif)
+
+### OutlinedButton
+
+```
+OutlinedButton(
+    onPressed: () {
+        // handle on pressed
+    },
+    busy: true, // defaults to false
+    label: 'Edit Info'.toUpperCase(),
+),
+```
+
+![outlined button](https://user-images.githubusercontent.com/9513691/88875702-76704d80-d241-11ea-91bd-1f220675f221.gif)
+
+### SchoolToolkitTextField
+
+```
+SchoolToolkitTextField(
+    hint: 'Custom text field',
+    controller: ...,
+    errorText: ...,
+    key: ...,
+    label: ...,
+    obscureText: ...,
+    onChanged: ...,
+    onFieldSubmitted: ...,
+    onSaved: ...,
+    onTap: ...,
+),
+```
+
+![custom text field](https://user-images.githubusercontent.com/9513691/88875792-a91a4600-d241-11ea-8ce1-a879c142b3ee.gif)
+
+### SchoolToolkitRoleButton
+
+```
+SchoolToolkitRoleButton(
+    iconData: FontAwesomeIcons.userGraduate,
+    label: 'Student'.toUpperCase(),
+    selected: true, // defaults to false
+),
+```
+
+![Role button](https://user-images.githubusercontent.com/9513691/88875948-ef6fa500-d241-11ea-9d48-f730113995ae.gif)
+
+### OverlappingButtonCard
+
+```
+OverlappingButtonCard(
+    width: 354,
+    height: 589,
+    label: 'Button label'.toUpperCase(),
+    onPressed: () {
+        // handle on presssed
+    },
+    chld: ...,
+    padding: ..., // optional field
+),
+```
+
+![overlapping button card](https://user-images.githubusercontent.com/9513691/88876043-29d94200-d242-11ea-972d-1a137c4369f8.gif)
+
+### Calendar
+
+```
+Calendar(
+    startExpanded: true, // set this to false if you need the calendar to be built shrinked (show only active week)
+    onDateSelected: (date) {
+        print('Selected date: $date');
+        // handle date selection
+    },
+    onNextMonth: (date) {
+        print('Next month: $date');
+        // handle on next month.
+    },
+    onPreviousMonth: (date) {
+        print('Previous month: $date');
+        // handle previous month
+    },
+    calendarEvents: [
+        DateTime.now(),
+        // optional, if added displays an indicator on the event date.
+    ],
+    recurringEventsByDay: [
+        DateTime(2020, 7, 1),
+        // optional, if added displays an indicator on every specified day of the month. in this case 1st of every month
+    ],
+    recurringEventsByWeekday: [
+        DateTime.sunday,
+        // optional, if added displays an indicator on every specified day of the week. in this case 1st of every sunday
+    ],
+),
+```
+
+![calendar](https://user-images.githubusercontent.com/9513691/88876207-80df1700-d242-11ea-8437-963039795c8f.gif)
+
+### NepaliCalendar
+
+**Important:** Please note the date returned by the NepaliCalendar methods use the NepaliDateTime instead of DateTime class
+
+```
+NepaliCalendar(
+    startExpanded: true, // set this to false if you need the calendar to be built shrinked (show only active week)
+    onDateSelected: (date) {
+        print('Selected date: $date');
+        // handle date selection
+    },
+    onNextMonth: (date) {
+        print('Next month: $date');
+        // handle on next month.
+    },
+    onPreviousMonth: (date) {
+        print('Previous month: $date');
+        // handle previous month
+    },
+    calendarEvents: [
+        DateTime.now(),
+        // optional, if added displays an indicator on the event date.
+    ],
+    recurringEventsByDay: [
+        DateTime(2020, 7, 1),
+        // optional, if added displays an indicator on every specified day of the month. in this case 1st of every month
+    ],
+    recurringEventsByWeekday: [
+        DateTime.sunday,
+        // optional, if added displays an indicator on every specified day of the week. in this case 1st of every sunday
+    ],
+),
+```
+
+![nepali calendar](https://user-images.githubusercontent.com/9513691/88877688-d832b680-d245-11ea-8c45-91276dd57fd1.gif)
+
+### EventCard
+
+```
+EventCard(
+    event: 'Sports week Class 3 - Class 10',
+    time: '1:00 - 3:00 PM',
+    secondaryColor: SchoolToolkitColors.lighterGrey,
+    primaryColor: SchoolToolkitColors.grey,
+),
+```
+
+![event card](https://user-images.githubusercontent.com/9513691/88877828-28aa1400-d246-11ea-8533-07d183c8876c.gif)
+
+### RoutineCard
+
+```
+RoutineCard(
+    classTopic: 'Fundamentals of Mathematics',
+    classType: 'Theory Class',
+    subject: 'Mathematics',
+    professor: 'Mr. Ram Prasad Yadav',
+    time: '8:00 - 9:00 AM',
+),
+```
+
+![routine card](https://user-images.githubusercontent.com/9513691/88877905-542cfe80-d246-11ea-9f82-bae4ce51956c.gif)
+
+### DeadlineCard
+
+```
+ DeadlineCard(
+    deadline: DateTime.now(),
+    secondaryColor: ..., // optional
+    primaryColor: ..., // optional
+),
+```
+
+![deadline card](https://user-images.githubusercontent.com/9513691/88877949-7161cd00-d246-11ea-823d-0962184a6175.gif)
+
+### AssignmentCard
+
+```
+AssignmentCard(
+    // optional, if deadline is not passed, deadline card will not be shown
+    deadline: DateTime.now(),
+    question:
+        'Chapter 3 - Q.no 1 - Q.no 10 (Please submit in word format with names attached)',
+    subject: 'Mathematics',
+    teacher: 'Dr. Stone',
+    deadlineBackgroundColor: SchoolToolkitColors.red,
+    onUploadHandler: () {
+        print('Handle upload');
+        // optional, if null is passsed upload button will be hidden
+    },
+    // optional, if filename is not passed, file name row will not be displayed
+    fileName: 'Roll24_RamanShrestha.pdf',
+    // optional,
+    fileSize: '1.2 MB',
+    onFileTapHandler: () {
+        print('Handle file tap');
+        // optional
+    },
+    onUnSubmitHandler: () {
+        print('Handle unsubmit');
+        // optional
+    },
+),
+
+```
+
+![assignment card](https://user-images.githubusercontent.com/9513691/88878024-a66e1f80-d246-11ea-973d-c1c989b5fc67.gif)
+
+### HighlightedIcon
+
+```
+HighlightedIcon(
+    icon: Icons.class_,
+    busy: true, // optional. If busy is set to true, displays a loading indicator instead of the icons passed.
+),
+```
+
+![highlighted icon](https://user-images.githubusercontent.com/9513691/88878248-36ac6480-d247-11ea-9a45-9100fa874c6f.gif)
+
+### FeaturedVideoCard
+
+```
+FeaturedVideoCard(
+    title: 'Professor KPR Lecture - Neuroscience Lecture 32',
+    thumbnailURL:
+        'https://www.teachermagazine.com.au/files/ce-image/cache/1c03ffc10fd4ef6a/Cognitive_load_theory_-_teaching_strategies_855_513_60.jpg',
+    onTap: () {
+        print('Handling on tap');
+    },
+),
+```
+
+![featured video card](https://user-images.githubusercontent.com/9513691/88878327-707d6b00-d247-11ea-9fe9-2a84c37e364d.gif)
+
+### VideoListTileCard
+
+```
+VideoListTileCard(
+    author: 'Dr. Richard',
+    title: 'The science of gamma radiation.',
+    margin: EdgeInsets.all(5.0),
+    thumbnailURL:
+        'https://www.teachermagazine.com.au/files/ce-image/cache/1c03ffc10fd4ef6a/Cognitive_load_theory_-_teaching_strategies_855_513_60.jpg',
+    color: ..., // Optional. use to set the background color of the tile
+    onTap: ..., // Optional. use to handle on tap
+    padding: ..., // Optional. use to add desired padding
+    showIcon: ..., // Optional. set this to flase if you don't want the icon besides the author.
+),
+```
+
+![video list tile card](https://user-images.githubusercontent.com/9513691/88878406-a3bffa00-d247-11ea-9407-9023189f7db7.gif)
+
+### ProfileCard
+
+```
+ProfileCard(
+    imageURL:
+        'https://cdn1.iconfinder.com/data/icons/female-avatars-vol-1/256/female-portrait-avatar-profile-woman-sexy-afro-2-512.png',
+    email: 'email@email.com',
+    name: 'Dr. Steven Stones',
+    phoneNumber: '9843XXXXXX',
+    post: 'Sorceror',
+    margin: EdgeInsets.all(5.0), // optional
+),
+```
+
+![profile card](https://user-images.githubusercontent.com/9513691/88878633-13ce8000-d248-11ea-8fb2-9f3435c884a7.gif)
+
+### BusRouteWidget
+
+```
+InformationTileWidget(
+    margin: EdgeInsets.all(5.0),
+    icon: FontAwesomeIcons.bus,
+    biggerTitle: true,
+    title: 'Bus Route 1',
+    subTitle: 'Tinkune-Dhobhighat-NewRoad',
+    iconColor: Colors.white,
+    rounded: false,
+    iconBackgroundColor: SchoolToolkitColors.blue,
+    onTap: ..., // Optional.
+),
+```
+
+![bus route widget](https://user-images.githubusercontent.com/9513691/88878739-47110f00-d248-11ea-93d6-42661c37d324.gif)
+
+### NoticeCard
+
+```
+NoticeCard(
+    date: DateFormat('yyyy-MM-dd').format(DateTime.now()),
+    title: 'School Reopens',
+    subTitile:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    onTap: () {
+        // Handle readmore
+    },
+),
+```
+
+![notice card](https://user-images.githubusercontent.com/9513691/88878862-948d7c00-d248-11ea-8dc3-58c390201458.gif)
+
+### LabelCard
+
+```
+LabelCard(
+    label: 'Text label',
+    color: SchoolToolkitColors.red,
+    height: ..., // Optional
+    width: ..., // Optional
+    textStyle: ..., // Optional
+),
+```
+
+![label card](https://user-images.githubusercontent.com/9513691/88878914-b981ef00-d248-11ea-8a0e-a316b37d8948.gif)
+
 ## Support
 
 Like what you see? Support me by buying me a coffee :)

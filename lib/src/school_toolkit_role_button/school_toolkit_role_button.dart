@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/screenutil.dart';
 import 'package:school_ui_toolkit/school_ui_toolkit.dart';
 import 'package:school_ui_toolkit/src/font_size/font_size.dart';
 import 'package:school_ui_toolkit/src/school_toolkit_card/school_toolkit_card.dart';
+import 'package:school_ui_toolkit/src/utils/screen_size.dart';
 
 class SchoolToolkitRoleButton extends StatelessWidget {
   final String label;
@@ -19,6 +20,16 @@ class SchoolToolkitRoleButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (ScreenUtil() == null) {
+      ScreenUtil.init(
+        context,
+        width: ScreenSize.width,
+        height: ScreenSize.height,
+        allowFontScaling: true,
+      );
+      ;
+    }
+
     return SchoolToolkitCard(
       width: ScreenUtil().setWidth(177),
       height: ScreenUtil().setHeight(120),

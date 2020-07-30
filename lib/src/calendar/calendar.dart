@@ -6,6 +6,7 @@ import 'package:school_ui_toolkit/src/calendar/calendar_date_element.dart';
 import 'package:school_ui_toolkit/src/colors/school_toolkit_colors.dart';
 import 'package:school_ui_toolkit/src/font_size/font_size.dart';
 import 'package:school_ui_toolkit/src/utils/calendar_utils.dart';
+import 'package:school_ui_toolkit/src/utils/screen_size.dart';
 
 class Calendar extends StatefulWidget {
   final bool startExpanded;
@@ -148,6 +149,16 @@ class _CalendarState extends State<Calendar>
 
   @override
   Widget build(BuildContext context) {
+    if (ScreenUtil() == null) {
+      ScreenUtil.init(
+        context,
+        width: ScreenSize.width,
+        height: ScreenSize.height,
+        allowFontScaling: true,
+      );
+      ;
+    }
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,

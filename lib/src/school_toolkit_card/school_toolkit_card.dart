@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/screenutil.dart';
 import 'package:school_ui_toolkit/src/colors/school_toolkit_colors.dart';
+import 'package:school_ui_toolkit/src/utils/screen_size.dart';
 
 class SchoolToolkitCard extends StatelessWidget {
   final Widget child;
@@ -30,6 +31,16 @@ class SchoolToolkitCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (ScreenUtil() == null) {
+      ScreenUtil.init(
+        context,
+        width: ScreenSize.width,
+        height: ScreenSize.height,
+        allowFontScaling: true,
+      );
+      ;
+    }
+
     return AnimatedContainer(
       duration: animationDuration,
       padding: EdgeInsets.all(

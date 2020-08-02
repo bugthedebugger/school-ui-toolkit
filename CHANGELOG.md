@@ -1,3 +1,7 @@
+## [2.4.7]
+
+- Updating ProfileCard: adding onPhoneNumberTap.
+
 ## [2.4.6]
 
 - Updating readme: adding example for each widget.

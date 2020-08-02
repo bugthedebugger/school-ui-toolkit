@@ -14,6 +14,7 @@ class ProfileCard extends StatelessWidget {
   final String email;
   final String phoneNumber;
   final EdgeInsets margin;
+  final Function onPhoneNumberTap;
 
   const ProfileCard({
     Key key,
@@ -23,6 +24,7 @@ class ProfileCard extends StatelessWidget {
     this.email,
     this.phoneNumber,
     this.margin,
+    this.onPhoneNumberTap,
   })  : assert(imageURL != null),
         super(key: key);
 
@@ -71,6 +73,7 @@ class ProfileCard extends StatelessWidget {
                   icon: FontAwesomeIcons.phoneAlt,
                   title: 'Phone Number',
                   subTitle: '$phoneNumber',
+                  onTap: onPhoneNumberTap,
                 ),
               ],
             ),

@@ -1,5 +1,9 @@
 # School UI Toolkit
 
+## [3.0.1]
+
+- Made the deadline text scrollable
+
 ## [3.0.0]
 
 - Breaking change: Calendar now takes an instance of CalendarEvent.

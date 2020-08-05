@@ -62,13 +62,18 @@ class DeadlineCard extends StatelessWidget {
           SizedBox(
             width: ScreenUtil().setWidth(5.0),
           ),
-          Text(
-            'Deadline: ${DateFormat('h:mm a | dd MMMM, yyyy').format(deadline)}'
-                .toUpperCase(),
-            style: TextStyle(
-              color: primaryColor ?? Colors.white,
-              fontSize: FontSize.fontSize14,
-              fontWeight: FontSize.semiBold,
+          Expanded(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Text(
+                'Deadline: ${DateFormat('h:mm a | dd MMMM, yyyy').format(deadline)}'
+                    .toUpperCase(),
+                style: TextStyle(
+                  color: primaryColor ?? Colors.white,
+                  fontSize: FontSize.fontSize14,
+                  fontWeight: FontSize.semiBold,
+                ),
+              ),
             ),
           ),
         ],

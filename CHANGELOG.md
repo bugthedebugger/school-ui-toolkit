@@ -1,5 +1,10 @@
 # School UI Toolkit
 
+## [3.0.0]
+
+- Breaking change: Calendar now takes an instance of CalendarEvent.
+- Calendar events can now have different color by the use of CalendarEvent.
+
 ## [2.4.7]
 
 - Updating ProfileCard: adding onPhoneNumberTap.

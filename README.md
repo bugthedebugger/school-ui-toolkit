@@ -34,7 +34,7 @@ The example file contains a catalog for all the available widgets.
 
 ### SchoolToolkitButton
 
-```
+```dart
 SchoolToolkitButton(
     onPressed: () {
         // handle on pressed
@@ -48,7 +48,7 @@ SchoolToolkitButton(
 
 ### SchoolLocationWidget
 
-```
+```dart
 SchoolLocationWidget(
     imageURL: 'http://via.placeholder.com/350x350',
     address: 'Area 69',
@@ -60,7 +60,7 @@ SchoolLocationWidget(
 
 ### OutlinedButton
 
-```
+```dart
 OutlinedButton(
     onPressed: () {
         // handle on pressed
@@ -74,7 +74,7 @@ OutlinedButton(
 
 ### SchoolToolkitTextField
 
-```
+```dart
 SchoolToolkitTextField(
     hint: 'Custom text field',
     controller: ...,
@@ -93,7 +93,7 @@ SchoolToolkitTextField(
 
 ### SchoolToolkitRoleButton
 
-```
+```dart
 SchoolToolkitRoleButton(
     iconData: FontAwesomeIcons.userGraduate,
     label: 'Student'.toUpperCase(),
@@ -105,7 +105,7 @@ SchoolToolkitRoleButton(
 
 ### OverlappingButtonCard
 
-```
+```dart
 OverlappingButtonCard(
     width: 354,
     height: 589,
@@ -122,7 +122,7 @@ OverlappingButtonCard(
 
 ### Calendar
 
-```
+```dart
 Calendar(
     startExpanded: true, // set this to false if you need the calendar to be built shrinked (show only active week)
     onDateSelected: (date) {
@@ -138,16 +138,27 @@ Calendar(
         // handle previous month
     },
     calendarEvents: [
-        DateTime.now(),
-        // optional, if added displays an indicator on the event date.
+        CalendarEvent.fromDateTime(
+            dateTime: DateTime.now(),
+            color: SchoolToolkitColors.red,
+        ),
     ],
     recurringEventsByDay: [
-        DateTime(2020, 7, 1),
-        // optional, if added displays an indicator on every specified day of the month. in this case 1st of every month
+        CalendarEvent.fromDateTime(
+            dateTime: DateTime(2020, 7, 1),
+            color: SchoolToolkitColors.blue,
+        ),
+        CalendarEvent.fromDateTime(
+            dateTime: DateTime(2020, 7, 2),
+            color: SchoolToolkitColors.red,
+        ),
     ],
     recurringEventsByWeekday: [
-        DateTime.sunday,
-        // optional, if added displays an indicator on every specified day of the week. in this case 1st of every sunday
+        CalendarEvent.fromWeekDay(
+            weekDay: DateTime.sunday,
+            color: SchoolToolkitColors.green,
+            holiday: true,
+        ),
     ],
 ),
 ```
@@ -158,7 +169,7 @@ Calendar(
 
 **Important:** Please note the date returned by the NepaliCalendar methods use the NepaliDateTime instead of DateTime class
 
-```
+```dart
 NepaliCalendar(
     startExpanded: true, // set this to false if you need the calendar to be built shrinked (show only active week)
     onDateSelected: (date) {
@@ -174,16 +185,22 @@ NepaliCalendar(
         // handle previous month
     },
     calendarEvents: [
-        DateTime.now(),
-        // optional, if added displays an indicator on the event date.
+        NepaliCalendarEvent.fromDateTime(
+            dateTime: NepaliDateTime.now(),
+            color: SchoolToolkitColors.red,
+        ),
     ],
     recurringEventsByDay: [
-        DateTime(2020, 7, 1),
-        // optional, if added displays an indicator on every specified day of the month. in this case 1st of every month
+        NepaliCalendarEvent.fromDateTime(
+            dateTime: NepaliDateTime(2020, 7, 1),
+            color: SchoolToolkitColors.green,
+        ),
     ],
     recurringEventsByWeekday: [
-        DateTime.sunday,
-        // optional, if added displays an indicator on every specified day of the week. in this case 1st of every sunday
+        NepaliCalendarEvent.fromWeekDay(
+            weekDay: 1,
+            color: SchoolToolkitColors.brown,
+        ),
     ],
 ),
 ```
@@ -192,7 +209,7 @@ NepaliCalendar(
 
 ### EventCard
 
-```
+```dart
 EventCard(
     event: 'Sports week Class 3 - Class 10',
     time: '1:00 - 3:00 PM',
@@ -205,7 +222,7 @@ EventCard(
 
 ### RoutineCard
 
-```
+```dart
 RoutineCard(
     classTopic: 'Fundamentals of Mathematics',
     classType: 'Theory Class',
@@ -219,7 +236,7 @@ RoutineCard(
 
 ### DeadlineCard
 
-```
+```dart
  DeadlineCard(
     deadline: DateTime.now(),
     secondaryColor: ..., // optional
@@ -231,7 +248,7 @@ RoutineCard(
 
 ### AssignmentCard
 
-```
+```dart
 AssignmentCard(
     // optional, if deadline is not passed, deadline card will not be shown
     deadline: DateTime.now(),
@@ -264,7 +281,7 @@ AssignmentCard(
 
 ### HighlightedIcon
 
-```
+```dart
 HighlightedIcon(
     icon: Icons.class_,
     busy: true, // optional. If busy is set to true, displays a loading indicator instead of the icons passed.
@@ -275,7 +292,7 @@ HighlightedIcon(
 
 ### FeaturedVideoCard
 
-```
+```dart
 FeaturedVideoCard(
     title: 'Professor KPR Lecture - Neuroscience Lecture 32',
     thumbnailURL:
@@ -290,7 +307,7 @@ FeaturedVideoCard(
 
 ### VideoListTileCard
 
-```
+```dart
 VideoListTileCard(
     author: 'Dr. Richard',
     title: 'The science of gamma radiation.',
@@ -308,7 +325,7 @@ VideoListTileCard(
 
 ### ProfileCard
 
-```
+```dart
 ProfileCard(
     imageURL:
         'https://cdn1.iconfinder.com/data/icons/female-avatars-vol-1/256/female-portrait-avatar-profile-woman-sexy-afro-2-512.png',
@@ -324,7 +341,7 @@ ProfileCard(
 
 ### BusRouteWidget
 
-```
+```dart
 InformationTileWidget(
     margin: EdgeInsets.all(5.0),
     icon: FontAwesomeIcons.bus,
@@ -342,7 +359,7 @@ InformationTileWidget(
 
 ### NoticeCard
 
-```
+```dart
 NoticeCard(
     date: DateFormat('yyyy-MM-dd').format(DateTime.now()),
     title: 'School Reopens',
@@ -358,7 +375,7 @@ NoticeCard(
 
 ### LabelCard
 
-```
+```dart
 LabelCard(
     label: 'Text label',
     color: SchoolToolkitColors.red,

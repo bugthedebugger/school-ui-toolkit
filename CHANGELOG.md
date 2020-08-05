@@ -1,5 +1,9 @@
 # School UI Toolkit
 
+## [3.1.0]
+
+- Adding info section in profile card
+
 ## [3.0.1]
 
 - Made the deadline text scrollable

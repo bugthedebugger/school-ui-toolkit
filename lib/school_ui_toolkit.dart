@@ -23,3 +23,5 @@ export 'package:school_ui_toolkit/src/notice_card/notice_card.dart';
 export 'package:school_ui_toolkit/src/label_card/label_card.dart';
 export 'package:school_ui_toolkit/src/custom_circular_progress/custom_circular_progress.dart';
 export 'package:school_ui_toolkit/src/nepali_calendar/nepali_calendar.dart';
+export 'package:school_ui_toolkit/src/calendar/calendar_event.dart';
+export 'package:school_ui_toolkit/src/nepali_calendar/nepali_calendar_event.dart';

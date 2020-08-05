@@ -5,6 +5,7 @@ import 'package:nepali_date_picker/nepali_date_picker.dart';
 import 'package:school_ui_toolkit/src/calendar/calendar_date_element.dart';
 import 'package:school_ui_toolkit/src/colors/school_toolkit_colors.dart';
 import 'package:school_ui_toolkit/src/font_size/font_size.dart';
+import 'package:school_ui_toolkit/src/nepali_calendar/nepali_calendar_event.dart';
 import 'package:school_ui_toolkit/src/utils/calendar_utils.dart';
 import 'package:school_ui_toolkit/src/utils/screen_size.dart';
 
@@ -13,9 +14,9 @@ class NepaliCalendar extends StatefulWidget {
   final Function(NepaliDateTime) onDateSelected;
   final Function(NepaliDateTime) onPreviousMonth;
   final Function(NepaliDateTime) onNextMonth;
-  final List<int> recurringEventsByWeekday;
-  final List<NepaliDateTime> calendarEvents;
-  final List<NepaliDateTime> recurringEventsByDay;
+  final List<NepaliCalendarEvent> recurringEventsByWeekday;
+  final List<NepaliCalendarEvent> calendarEvents;
+  final List<NepaliCalendarEvent> recurringEventsByDay;
 
   const NepaliCalendar({
     Key key,
@@ -304,22 +305,12 @@ class _NepaliCalendarState extends State<NepaliCalendar>
                                           decoration: BoxDecoration(
                                             shape: BoxShape.circle,
                                             color: CalendarUtils
-                                                        .checkIfRecurringByWeekDayBS(
-                                                            date,
-                                                            widget
-                                                                .recurringEventsByWeekday) ||
-                                                    CalendarUtils
-                                                        .checkIfRecurringByDayBS(
-                                                            date,
-                                                            widget
-                                                                .recurringEventsByDay) ||
-                                                    CalendarUtils
-                                                        .checkIfCalendarEventBS(
-                                                            date,
-                                                            widget
-                                                                .calendarEvents)
-                                                ? SchoolToolkitColors.blue
-                                                : Colors.transparent,
+                                                .getNepaliCalendarEventColor(
+                                              date,
+                                              widget.recurringEventsByWeekday,
+                                              widget.recurringEventsByDay,
+                                              widget.calendarEvents,
+                                            ),
                                           ),
                                         ),
                                       ],
@@ -391,21 +382,12 @@ class _NepaliCalendarState extends State<NepaliCalendar>
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
                                         color: CalendarUtils
-                                                    .checkIfRecurringByWeekDayBS(
-                                                        date,
-                                                        widget
-                                                            .recurringEventsByWeekday) ||
-                                                CalendarUtils
-                                                    .checkIfRecurringByDayBS(
-                                                        date,
-                                                        widget
-                                                            .recurringEventsByDay) ||
-                                                CalendarUtils
-                                                    .checkIfCalendarEventBS(
-                                                        date,
-                                                        widget.calendarEvents)
-                                            ? SchoolToolkitColors.blue
-                                            : Colors.transparent,
+                                            .getNepaliCalendarEventColor(
+                                          date,
+                                          widget.recurringEventsByWeekday,
+                                          widget.recurringEventsByDay,
+                                          widget.calendarEvents,
+                                        ),
                                       ),
                                     ),
                                   ],

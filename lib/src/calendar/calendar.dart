@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:school_ui_toolkit/src/calendar/calendar_date_element.dart';
+import 'package:school_ui_toolkit/src/calendar/calendar_event.dart';
 import 'package:school_ui_toolkit/src/colors/school_toolkit_colors.dart';
 import 'package:school_ui_toolkit/src/font_size/font_size.dart';
 import 'package:school_ui_toolkit/src/utils/calendar_utils.dart';
@@ -13,9 +14,9 @@ class Calendar extends StatefulWidget {
   final Function(DateTime) onDateSelected;
   final Function(DateTime) onPreviousMonth;
   final Function(DateTime) onNextMonth;
-  final List<int> recurringEventsByWeekday;
-  final List<DateTime> calendarEvents;
-  final List<DateTime> recurringEventsByDay;
+  final List<CalendarEvent> recurringEventsByWeekday;
+  final List<CalendarEvent> calendarEvents;
+  final List<CalendarEvent> recurringEventsByDay;
 
   const Calendar({
     Key key,
@@ -303,24 +304,13 @@ class _CalendarState extends State<Calendar>
                                           height: ScreenUtil().setWidth(6),
                                           decoration: BoxDecoration(
                                             shape: BoxShape.circle,
-                                            color:
-                                                CalendarUtils
-                                                            .checkIfRecurringByWeekDay(
-                                                                date,
-                                                                widget
-                                                                    .recurringEventsByWeekday) ||
-                                                        CalendarUtils
-                                                            .checkIfRecurringByDay(
-                                                                date,
-                                                                widget
-                                                                    .recurringEventsByDay) ||
-                                                        CalendarUtils
-                                                            .checkIfCalendarEvent(
-                                                                date,
-                                                                widget
-                                                                    .calendarEvents)
-                                                    ? SchoolToolkitColors.blue
-                                                    : Colors.transparent,
+                                            color: CalendarUtils
+                                                .getCalendarEventColor(
+                                              date,
+                                              widget.recurringEventsByWeekday,
+                                              widget.recurringEventsByDay,
+                                              widget.calendarEvents,
+                                            ),
                                           ),
                                         ),
                                       ],
@@ -388,20 +378,13 @@ class _CalendarState extends State<Calendar>
                                       height: ScreenUtil().setWidth(6),
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
-                                        color: CalendarUtils
-                                                    .checkIfRecurringByWeekDay(
-                                                        date,
-                                                        widget
-                                                            .recurringEventsByWeekday) ||
-                                                CalendarUtils.checkIfRecurringByDay(
-                                                    date,
-                                                    widget
-                                                        .recurringEventsByDay) ||
-                                                CalendarUtils
-                                                    .checkIfCalendarEvent(date,
-                                                        widget.calendarEvents)
-                                            ? SchoolToolkitColors.blue
-                                            : Colors.transparent,
+                                        color:
+                                            CalendarUtils.getCalendarEventColor(
+                                          date,
+                                          widget.recurringEventsByWeekday,
+                                          widget.recurringEventsByDay,
+                                          widget.calendarEvents,
+                                        ),
                                       ),
                                     ),
                                   ],

@@ -24,13 +24,22 @@ class NepaliCalendarExample extends StatelessWidget {
           print('Previous month: $date');
         },
         calendarEvents: [
-          NepaliDateTime.now(),
+          NepaliCalendarEvent.fromDateTime(
+            dateTime: NepaliDateTime.now(),
+            color: SchoolToolkitColors.red,
+          ),
         ],
         recurringEventsByDay: [
-          NepaliDateTime(2020, 7, 1),
+          NepaliCalendarEvent.fromDateTime(
+            dateTime: NepaliDateTime(2020, 7, 1),
+            color: SchoolToolkitColors.green,
+          ),
         ],
         recurringEventsByWeekday: [
-          1,
+          NepaliCalendarEvent.fromWeekDay(
+            weekDay: 1,
+            color: SchoolToolkitColors.brown,
+          ),
         ],
       ),
     );

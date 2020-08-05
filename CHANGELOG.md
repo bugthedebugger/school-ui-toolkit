@@ -1,3 +1,5 @@
+# School UI Toolkit
+
 ## [2.4.7]
 
 - Updating ProfileCard: adding onPhoneNumberTap.

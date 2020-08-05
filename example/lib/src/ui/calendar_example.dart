@@ -22,13 +22,27 @@ class CalendarExample extends StatelessWidget {
           print('Previous month: $date');
         },
         calendarEvents: [
-          DateTime.now(),
+          CalendarEvent.fromDateTime(
+            dateTime: DateTime.now(),
+            color: SchoolToolkitColors.red,
+          ),
         ],
         recurringEventsByDay: [
-          DateTime(2020, 7, 1),
+          CalendarEvent.fromDateTime(
+            dateTime: DateTime(2020, 7, 1),
+            color: SchoolToolkitColors.blue,
+          ),
+          CalendarEvent.fromDateTime(
+            dateTime: DateTime(2020, 7, 2),
+            color: SchoolToolkitColors.red,
+          ),
         ],
         recurringEventsByWeekday: [
-          DateTime.sunday,
+          CalendarEvent.fromWeekDay(
+            weekDay: DateTime.sunday,
+            color: SchoolToolkitColors.green,
+            holiday: true,
+          ),
         ],
       ),
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:school_ui_toolkit/school_ui_toolkit.dart';
+import 'package:school_ui_toolkit/school_ui_toolkit.dart' as toolkit;
 
 class OutlinedButtonExample extends StatelessWidget {
   @override
@@ -12,7 +12,7 @@ class OutlinedButtonExample extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Center(
-          child: OutlinedButton(
+          child: toolkit.OutlinedButton(
             label: 'Edit Info'.toUpperCase(),
             onPressed: () {},
             busy: true,

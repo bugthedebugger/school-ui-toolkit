@@ -91,6 +91,10 @@ class CalendarDateElement extends StatelessWidget {
           width: ScreenUtil().setWidth(40),
           height: ScreenUtil().setWidth(40),
           alignment: Alignment.center,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: Colors.transparent,
+          ),
           child: Text(
             '$date',
             style: TextStyle(

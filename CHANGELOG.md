@@ -1,5 +1,9 @@
 # School UI Toolkit
 
+## [3.1.1]
+
+- Increased the hitbox size of the calendar element
+
 ## [3.1.0]
 
 - Adding info section in profile card

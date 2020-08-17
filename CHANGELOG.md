@@ -1,5 +1,9 @@
 # School UI Toolkit
 
+## [4.0.0]
+
+- Breaking change: Assignment card now takes in a FileWrapper instead of fileName, fileSize and unSubmitHandler.
+
 ## [3.1.1]
 
 - Increased the hitbox size of the calendar element

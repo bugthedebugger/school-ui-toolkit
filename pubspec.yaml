@@ -1,6 +1,6 @@
 name: school_ui_toolkit
 description: A basic UI toolkit to get you started with flutter application development. A collection of over 18+ custom widgets such as Calendar, Buttons with busy indicator and more.
-version: 3.1.1
+version: 4.0.0
 homepage: https://github.com/bprayush/school-ui-toolkit
 
 environment:

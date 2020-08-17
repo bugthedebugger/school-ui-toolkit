@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:school_ui_toolkit/school_ui_toolkit.dart';
+import 'package:school_ui_toolkit/src/assignment_card/assignment_card_file_element.dart';
 import 'package:school_ui_toolkit/src/colors/school_toolkit_colors.dart';
 import 'package:school_ui_toolkit/src/deadline_card/deadline_card.dart';
 import 'package:school_ui_toolkit/src/font_size/font_size.dart';
@@ -14,10 +16,7 @@ class AssignmentCard extends StatelessWidget {
   final Color deadlineBackgroundColor;
   final Color deadlineTextColor;
   final Function onUploadHandler;
-  final Function onUnSubmitHandler;
-  final Function onFileTapHandler;
-  final String fileName;
-  final String fileSize;
+  final List<FileWrapper> fileList;
 
   const AssignmentCard({
     Key key,
@@ -28,10 +27,7 @@ class AssignmentCard extends StatelessWidget {
     this.deadlineBackgroundColor,
     this.deadlineTextColor,
     this.onUploadHandler,
-    this.onUnSubmitHandler,
-    this.onFileTapHandler,
-    this.fileName,
-    this.fileSize,
+    this.fileList,
   }) : super(key: key);
 
   @override
@@ -185,72 +181,18 @@ class AssignmentCard extends StatelessWidget {
                 ),
             ],
           ),
-          if (fileName != null) ...[
+          if (fileList != null && ((fileList?.length ?? 0) > 0)) ...[
             SizedBox(
               height: ScreenUtil().setHeight(10),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Icon(
-                  FontAwesomeIcons.file,
-                  color: SchoolToolkitColors.mediumGrey,
-                  size: FontSize.fontSize16,
+            ...fileList?.map((e) {
+              return Padding(
+                padding: EdgeInsets.only(
+                  bottom: ScreenUtil().setHeight(10),
                 ),
-                SizedBox(
-                  width: ScreenUtil().setWidth(7),
-                ),
-                GestureDetector(
-                  onTap: onFileTapHandler,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        '$fileName',
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          color: SchoolToolkitColors.blue,
-                          fontSize: FontSize.fontSize14,
-                          fontWeight: FontSize.medium,
-                        ),
-                      ),
-                      Text(
-                        '$fileSize',
-                        style: TextStyle(
-                          color: SchoolToolkitColors.mediumGrey,
-                          fontSize: FontSize.fontSize14,
-                          fontWeight: FontSize.medium,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Expanded(
-                  child: Container(),
-                ),
-                GestureDetector(
-                  onTap: onUnSubmitHandler,
-                  child: Container(
-                    width: ScreenUtil().setWidth(32),
-                    height: ScreenUtil().setHeight(32),
-                    padding: EdgeInsets.all(
-                      ScreenUtil().setWidth(5.0),
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.circle,
-                    ),
-                    child: Icon(
-                      FontAwesomeIcons.times,
-                      size: FontSize.fontSize14,
-                      color: SchoolToolkitColors.mediumGrey,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+                child: AssignmentCardFileElement(fileWrapper: e),
+              );
+            })?.toList(),
           ]
         ],
       ),

@@ -50,14 +50,22 @@ class AssignmentCardExample extends StatelessWidget {
                   onUploadHandler: () {
                     print('Handle upload');
                   },
-                  fileName: 'Roll24_RamanShrestha.pdf',
-                  fileSize: '1.2 MB',
-                  onFileTapHandler: () {
-                    print('Handle file tap');
-                  },
-                  onUnSubmitHandler: () {
-                    print('Handle unsubmit');
-                  },
+                  fileList: [
+                    FileWrapper(
+                      fileName: 'assignment-information.pdf',
+                      fileSize: '11.5 KB',
+                      onTap: () {
+                        print('Handle on tap');
+                      },
+                    ),
+                    FileWrapper(
+                      fileName: 'assignment-information-2.pdf',
+                      fileSize: '11.5 KB',
+                      onTap: () {
+                        print('Handle on tap');
+                      },
+                    ),
+                  ],
                 ),
               ),
             ],

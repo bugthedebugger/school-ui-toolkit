@@ -261,18 +261,16 @@ AssignmentCard(
         print('Handle upload');
         // optional, if null is passsed upload button will be hidden
     },
-    // optional, if filename is not passed, file name row will not be displayed
-    fileName: 'Roll24_RamanShrestha.pdf',
-    // optional,
-    fileSize: '1.2 MB',
-    onFileTapHandler: () {
-        print('Handle file tap');
-        // optional
-    },
-    onUnSubmitHandler: () {
-        print('Handle unsubmit');
-        // optional
-    },
+    // optional
+    fileList: [
+        FileWrapper(
+            fileName: 'assignment-information.pdf',
+            fileSize: '11.5 KB',
+            onTap: () {
+            print('Handle on tap');
+            },
+        ),
+    ],
 ),
 
 ```

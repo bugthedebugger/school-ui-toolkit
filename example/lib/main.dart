@@ -17,18 +17,13 @@ class UIExample extends StatelessWidget {
       ),
       builder: (context, child) {
         ScreenUtil.init(
-<<<<<<< HEAD
           context,
-          designSize: Size(ScreenSize.width, ScreenSize.height),
+          designSize: Size(
+            ScreenSize.width,
+            ScreenSize.height,
+          ),
           allowFontScaling: true,
         );
-=======
-        context,
-        designSize :Size( ScreenSize.width,
-         ScreenSize.height,),
-        allowFontScaling: true,
-      );
->>>>>>> d97c3b67a56743811acbc1a9b1ae7f6b76a60400
         return child;
       },
       home: UICatalog(),

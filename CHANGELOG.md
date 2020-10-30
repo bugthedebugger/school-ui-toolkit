@@ -1,5 +1,9 @@
 # School UI Toolkit
 
+## [5.0.0]
+
+- Breaking change: Added support for Screenutil v3.0.0 an above
+
 ## [4.0.0]
 
 - Breaking change: Assignment card now takes in a FileWrapper instead of fileName, fileSize and unSubmitHandler.

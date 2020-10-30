@@ -157,7 +157,11 @@ packages:
       name: meta
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
     version: "1.3.0-nullsafety.4"
+=======
+    version: "1.3.0-nullsafety.3"
+>>>>>>> d97c3b67a56743811acbc1a9b1ae7f6b76a60400
   nepali_date_picker:
     dependency: "direct main"
     description:
@@ -281,7 +285,11 @@ packages:
       name: stack_trace
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
     version: "1.10.0-nullsafety.4"
+=======
+    version: "1.10.0-nullsafety.2"
+>>>>>>> d97c3b67a56743811acbc1a9b1ae7f6b76a60400
   stream_channel:
     dependency: transitive
     description:
@@ -346,5 +354,9 @@ packages:
     source: hosted
     version: "0.1.0"
 sdks:
+<<<<<<< HEAD
   dart: ">=2.10.0-110 <=2.11.0-229.0.dev"
+=======
+  dart: ">=2.10.0-110 <=2.11.0-186.0.dev"
+>>>>>>> d97c3b67a56743811acbc1a9b1ae7f6b76a60400
   flutter: ">=1.17.0 <2.0.0"

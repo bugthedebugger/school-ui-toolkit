@@ -16,7 +16,10 @@ class CustomCircularProgress extends StatelessWidget {
     if (ScreenUtil() == null) {
       ScreenUtil.init(
         context,
-        designSize: Size(ScreenSize.width, ScreenSize.height),
+        designSize: Size(
+          ScreenSize.width,
+          ScreenSize.height,
+        ),
         allowFontScaling: true,
       );
     }

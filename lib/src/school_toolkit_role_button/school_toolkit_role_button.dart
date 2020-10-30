@@ -23,8 +23,7 @@ class SchoolToolkitRoleButton extends StatelessWidget {
     if (ScreenUtil() == null) {
       ScreenUtil.init(
         context,
-        width: ScreenSize.width,
-        height: ScreenSize.height,
+        designSize: Size(ScreenSize.width, ScreenSize.height),
         allowFontScaling: true,
       );
     }
